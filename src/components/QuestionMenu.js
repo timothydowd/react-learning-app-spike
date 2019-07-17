@@ -12,7 +12,8 @@ export default class QuestionMenu extends Component {
             lastOptionChosen: false,
             lastCorrectAnswer: '',
             lastWord: '',
-            firstQuestion: true
+            firstQuestion: true,
+            toggleAnswerOutcome: false
         }
     }
 
@@ -20,15 +21,17 @@ export default class QuestionMenu extends Component {
         console.log(option)
 
         const correctAnswer = this.props.data.antonyms[this.state.antonymIndex].correctAnswer
-        // const plusOne = this.state.antonymIndex + 1
         const word = this.props.data.antonyms[this.state.antonymIndex].word
+        const currentScore = this.state.score
+        
 
         if(this.state.antonymIndex === this.props.data.antonyms.length - 1){
             this.setState({
                 end: true,
                 lastCorrectAnswer: correctAnswer,
                 lastOptionChosen: option,
-                lastWord: word
+                lastWord: word,
+                score: this.handleScore(option, correctAnswer, currentScore)
             })
         } else {
             this.setState({
@@ -36,22 +39,42 @@ export default class QuestionMenu extends Component {
                 lastCorrectAnswer: correctAnswer,
                 lastOptionChosen: option,
                 lastWord: word,
-                firstQuestion: false
+                firstQuestion: false,
+                toggleAnswerOutcome: this.toggleAnswerOutcome(),
+                score: this.handleScore(option, correctAnswer, currentScore)
             })
         }
         
     }
 
+    handleScore(option, correctAnswer, currentScore){
+        let newScore = currentScore
+        if(correctAnswer === option){
+            newScore++
+        } 
+
+        return newScore
+    }
+    
+
     nextQuestion = () => {
         console.log('clicked next q')
         const plusOne = this.state.antonymIndex + 1
         this.setState({
-            antonymIndex: plusOne
+            antonymIndex: plusOne,
+            toggleAnswerOutcome: this.toggleAnswerOutcome()
         })
     }
 
+    toggleAnswerOutcome(){
+        const toggledAnswerOutcome = !this.state.toggleAnswerOutcome
+        return toggledAnswerOutcome
+    }
+
+
     componentDidUpdate(){
-        console.log('compupdate')
+        console.log('compupdate score', this.state.score)
+        
     }
 
 
@@ -64,13 +87,22 @@ export default class QuestionMenu extends Component {
         
         return (
             <div>
-                <p>What is the antonym of: {this.state.end ? this.state.score : antonymQs[this.state.antonymIndex].word}</p>
-                <div>
-                    {antonymQs[this.state.antonymIndex].options.map(option => {
-                        return <button key={option} onClick={() => this.handleClick(option) }>{option}</button>
-                    })}
-                </div>
-                <AnswerOutcome firstQuestion={this.state.firstQuestion} nextQuestion={this.nextQuestion} lastWord={this.state.lastWord} lastOptionChosen={this.state.lastOptionChosen} lastCorrectAnswer={this.state.lastCorrectAnswer} antonymIndex={this.state.antonymIndex}/>
+                {!this.state.toggleAnswerOutcome ? 
+                    <div>
+                        {this.state.end ? 
+                            <p>You scored {this.state.score} out of {this.props.data.antonyms.length} </p> :  
+                            <div>
+                                What is the antonym of: {antonymQs[this.state.antonymIndex].word} 
+                                <div>
+                                    {antonymQs[this.state.antonymIndex].options.map(option => {
+                                        return <button key={option} onClick={() => this.handleClick(option) }>{option}</button>
+                                    })}
+                                </div>
+                            </div>
+                        }                      
+                    </div> :
+                    <AnswerOutcome firstQuestion={this.state.firstQuestion} nextQuestion={this.nextQuestion} lastWord={this.state.lastWord} lastOptionChosen={this.state.lastOptionChosen} lastCorrectAnswer={this.state.lastCorrectAnswer} antonymIndex={this.state.antonymIndex}/>
+                }
             </div>
         )
     }
