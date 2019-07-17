@@ -1,0 +1,65 @@
+{
+    "antonyms": [
+        {
+            "id": 1,
+            "word": "commence",
+            "options": ["terminate", "start", "begin", "initiate"],
+            "correctAnswer": "terminate"
+        },
+        {
+            "id": 2,
+            "word": "interior",
+            "options": ["centre", "core", "heart", "exterior"],
+            "correctAnswer": "exterior"
+        },
+        {
+            "id": 3,
+            "word": "vacant",
+            "options": ["occupied", "free", "unoccupied", "Available"],
+            "correctAnswer": "occupied"
+        },
+        {
+            "id": 4,
+            "word": "tranquil",
+            "options": ["calm", "cool", "agitated", "relaxed"],
+            "correctAnswer": "agitated"
+        },
+        {
+            "id": 5,
+            "word": "abandon",
+            "options": ["call off", "end", "continue", "halt"],
+            "correctAnswer": "continue"
+        },
+        {
+            "id": 6,
+            "word": "foe",
+            "options": ["enemy", "rival", "opponent", "friend"],
+            "correctAnswer": "friend"
+        },
+        {
+            "id": 7,
+            "word": "traitor",
+            "options": ["loyalist", "turncoat", "collaborator", "double agent"],
+            "correctAnswer": "loyalist"
+        },
+        {
+            "id": 8,
+            "word": "conceal",
+            "options": ["hide", "cover", "reveal", "camouflage"],
+            "correctAnswer": "reveal"
+        },
+        {
+            "id": 9,
+            "word": "impudent",
+            "options": ["rude", "respectful", "impolite", "insolent"],
+            "correctAnswer": "respectful"
+        },
+        {
+            "id": 10,
+            "word": "insert",
+            "options": ["include", "enclose", "extract", "introduce"],
+            "correctAnswer": "extract"
+        }
+
+    ]
+}
