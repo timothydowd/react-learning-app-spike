@@ -5,10 +5,16 @@ export default class AnswerOutcome extends Component {
         console.log(this.props.antonymIndex)
         return (
             <div>
-                {this.props.antonymIndex !== 0 
+                {!this.props.firstQuestion
                     ? this.props.lastOptionChosen === this.props.lastCorrectAnswer 
-                        ? <p>correct answer</p> 
-                        : <p>incorrect, the antonym of {this.props.lastWord} is {this.props.lastCorrectAnswer}</p> 
+                        ? <div>
+                            correct answer
+                            <button onClick={() => this.props.nextQuestion() }>Next Question</button>
+                        </div> 
+                        : <div>
+                            incorrect, the antonym of {this.props.lastWord} is {this.props.lastCorrectAnswer}
+                            <button onClick={() => this.props.nextQuestion() }>Next Question</button>
+                        </div> 
                     : <p>nowt</p>}
                     
             </div>
