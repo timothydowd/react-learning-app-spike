@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 export default class AnswerOutcome extends Component {
     render() {
-        console.log(this.props.antonymIndex)
+        // console.log(this.props.antonymIndex)
         return (
             <div>
                 {!this.props.firstQuestion

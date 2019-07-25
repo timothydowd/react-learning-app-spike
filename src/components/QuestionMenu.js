@@ -18,7 +18,7 @@ export default class QuestionMenu extends Component {
     }
 
     handleOptionClick (option) {
-        console.log(option)
+        // console.log(option)
 
         const correctAnswer = this.props.data.antonyms[this.state.antonymIndex].correctAnswer
         const word = this.props.data.antonyms[this.state.antonymIndex].word
@@ -58,7 +58,7 @@ export default class QuestionMenu extends Component {
     
 
     nextQuestion = () => {
-        console.log('clicked next q')
+        // console.log('clicked next q')
         const plusOne = this.state.antonymIndex + 1
         this.setState({
             antonymIndex: plusOne,
@@ -73,7 +73,7 @@ export default class QuestionMenu extends Component {
 
 
     componentDidUpdate(){
-        console.log('compupdate score', this.state.score)
+        // console.log('compupdate score', this.state.score)
         
     }
 
@@ -87,7 +87,7 @@ export default class QuestionMenu extends Component {
         
         return (
             <div>
-                question menu
+                
                 {!this.state.toggleAnswerOutcome ? 
                     <div>
                         {this.state.end ? 
