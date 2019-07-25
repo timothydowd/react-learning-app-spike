@@ -17,7 +17,7 @@ export default class QuestionMenu extends Component {
         }
     }
 
-    handleClick (option) {
+    handleOptionClick (option) {
         console.log(option)
 
         const correctAnswer = this.props.data.antonyms[this.state.antonymIndex].correctAnswer
@@ -87,6 +87,7 @@ export default class QuestionMenu extends Component {
         
         return (
             <div>
+                question menu
                 {!this.state.toggleAnswerOutcome ? 
                     <div>
                         {this.state.end ? 
@@ -95,7 +96,7 @@ export default class QuestionMenu extends Component {
                                 What is the antonym of: {antonymQs[this.state.antonymIndex].word} 
                                 <div>
                                     {antonymQs[this.state.antonymIndex].options.map(option => {
-                                        return <button key={option} onClick={() => this.handleClick(option) }>{option}</button>
+                                        return <button key={option} onClick={() => this.handleOptionClick(option) }>{option}</button>
                                     })}
                                 </div>
                             </div>
