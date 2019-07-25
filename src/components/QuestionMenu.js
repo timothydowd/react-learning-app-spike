@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import AnswerOutcome from './AnswerOutcome'
+import { createQAndAs } from '../utils/utils'
 
 export default class QuestionMenu extends Component {
     constructor (props) {
@@ -13,19 +14,21 @@ export default class QuestionMenu extends Component {
             lastCorrectAnswer: '',
             lastWord: '',
             firstQuestion: true,
-            toggleAnswerOutcome: false
+            toggleAnswerOutcome: false,
+            qAndAs: createQAndAs(this.props.data, this.props.synOrAnt)
         }
     }
 
     handleOptionClick (option) {
         // console.log(option)
 
-        const correctAnswer = this.props.data.antonyms[this.state.antonymIndex].correctAnswer
-        const word = this.props.data.antonyms[this.state.antonymIndex].word
+        // const correctAnswer = this.props.data.antonyms[this.state.antonymIndex].correctAnswer
+        const correctAnswer = this.state.qAndAs[this.state.antonymIndex].correctAnswer
+        const word = this.state.qAndAs[this.state.antonymIndex].word
         const currentScore = this.state.score
         
 
-        if(this.state.antonymIndex === this.props.data.antonyms.length - 1){
+        if(this.state.antonymIndex === this.state.qAndAs.length - 1){
             this.setState({
                 end: true,
                 lastCorrectAnswer: correctAnswer,
@@ -82,8 +85,10 @@ export default class QuestionMenu extends Component {
 
 
     render() {
-        const antonymQs = this.props.data.antonyms
-        console.log(antonymQs)
+        // const qandAs = createQAndAs(this.props.data, this.props.synOrAnt)
+        const qandAs = this.state.qAndAs
+        console.log(qandAs)
+        
         
         return (
             <div>
@@ -91,11 +96,11 @@ export default class QuestionMenu extends Component {
                 {!this.state.toggleAnswerOutcome ? 
                     <div>
                         {this.state.end ? 
-                            <p>You scored {this.state.score} out of {this.props.data.antonyms.length} </p> :  
+                            <p>You scored {this.state.score} out of {this.state.qAndAs.length} </p> :  
                             <div>
-                                What is the antonym of: {antonymQs[this.state.antonymIndex].word} 
+                                What is the {this.props.synOrAnt.slice(0, -1)} of: {qandAs[this.state.antonymIndex].word} 
                                 <div>
-                                    {antonymQs[this.state.antonymIndex].options.map(option => {
+                                    {qandAs[this.state.antonymIndex].options.map(option => {
                                         return <button key={option} onClick={() => this.handleOptionClick(option) }>{option}</button>
                                     })}
                                 </div>

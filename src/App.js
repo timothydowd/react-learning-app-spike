@@ -4,7 +4,7 @@ import wordData from '../src/data/word-data.json'
 import './App.css';
 import { formatJsonData, createQAndAs } from '../src/utils/utils'
 import Nav from './components/Nav'
-import { Router, Link, navigate } from '@reach/router'
+import { Router } from '@reach/router'
 import SynonymsStudy from './components/SynonymsStudy'
 import SynonymsTest from './components/SynonymsTest'
 import AntonymsStudy from './components/AntonymsStudy'
@@ -16,7 +16,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      data: qsAndAs
+      data: formatJsonData(wordData)
     }
   }
   render() {
@@ -27,8 +27,8 @@ class App extends Component {
         
         <Router>
           <Home path="/" />
-          <SynonymsStudy path="synonyms_study" />
-          <AntonymsStudy path="antonyms_study" />
+          <SynonymsStudy path="synonyms_study" data={this.state.data} />
+          <AntonymsStudy path="antonyms_study" data={this.state.data} />
           <SynonymsTest path="synonyms_test" />
           <AntonymsTest path="antonyms_test" />         
         </Router>

@@ -19,7 +19,10 @@ export const formatJsonData = (json) => {
     return formattedData
 }
 
+
 export const createQAndAs = (wordData, synOrAnt) => {
+    
+
     
     const randomData = []
     const wordDataLength = wordData.length
@@ -46,12 +49,22 @@ export const createQAndAs = (wordData, synOrAnt) => {
     
     const formattedQandAs = randomData.map((wordObject, index) => {
         // format to q and a 
-        
         const randomIndex = Math.floor(Math.random() * wordObject[synOrAnt].length)
         if(synOrAnt === 'synonyms'){
-            return { id: index + 1, word: wordObject.word, options: wordObject.antonyms, correctAnswer: wordObject.synonyms[randomIndex]  }
+            const word = wordObject.word
+            const antonyms = wordObject.antonyms
+            const correctAnswer = wordObject.synonyms[randomIndex]
+            const randomIndexOptions = Math.floor(Math.random() * antonyms.length)
+            const optionsWithCorrectAnswer = [...antonyms.slice(0, randomIndexOptions), correctAnswer, ...antonyms.slice(randomIndexOptions)]
+            
+            return { id: index + 1, word, options: optionsWithCorrectAnswer, correctAnswer  }
         } else if(synOrAnt === 'antonyms') {
-            return { id: index + 1, word: wordObject.word, options: wordObject.synonyms, correctAnswer: wordObject.antonyms[randomIndex]  }
+            const word = wordObject.word
+            const synonyms = wordObject.synonyms
+            const correctAnswer = wordObject.antonyms[randomIndex]
+            const randomIndexOptions = Math.floor(Math.random() * synonyms.length)
+            const optionsWithCorrectAnswer = [...synonyms.slice(0, randomIndexOptions), correctAnswer, ...synonyms.slice(randomIndexOptions)]
+            return { id: index + 1, word, options: optionsWithCorrectAnswer, correctAnswer  }
         }
         
     })
