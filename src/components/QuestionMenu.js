@@ -121,9 +121,7 @@ export default class QuestionMenu extends Component {
     
 
     componentDidUpdate(){
-       console.log('componentDidUpdate: ', this.state.qAndAs)
-       console.log('toggleAnswerOutcome:', this.state.toggleAnswerOutcome)
-       console.log('end: ',this.state.end)
+       
         
     }
 
