@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import AnswerOutcome from './AnswerOutcome'
-import { createQAndAs } from '../utils/utils'
+import { createQAndAs, insertQuestionBackIntoStack } from '../utils/utils'
 
 export default class QuestionMenu extends Component {
     constructor (props) {
         super(props)
         this.state = {
-            antonymIndex: 0,
+            questionIndex: 0,
             answerOutcome:false,
             end: false,
             score: 0,
@@ -20,23 +20,21 @@ export default class QuestionMenu extends Component {
     }
 
     handleOptionClick (option) {
-        // console.log(option)
-
-        // const correctAnswer = this.props.data.antonyms[this.state.antonymIndex].correctAnswer
-        const correctAnswer = this.state.qAndAs[this.state.antonymIndex].correctAnswer
-        const word = this.state.qAndAs[this.state.antonymIndex].word
+       
+        const correctAnswer = this.state.qAndAs[this.state.questionIndex].correctAnswer
+        const word = this.state.qAndAs[this.state.questionIndex].word
         const currentScore = this.state.score
         
 
-        if(this.state.antonymIndex === this.state.qAndAs.length - 1){
-            this.setState({
-                end: true,
-                lastCorrectAnswer: correctAnswer,
-                lastOptionChosen: option,
-                lastWord: word,
-                score: this.handleScore(option, correctAnswer, currentScore)
-            })
-        } else {
+        // if(this.state.questionIndex === this.state.qAndAs.length - 1){
+        //     this.setState({
+        //         end: true,
+        //         lastCorrectAnswer: correctAnswer,
+        //         lastOptionChosen: option,
+        //         lastWord: word,
+        //         score: this.handleScore(option, correctAnswer, currentScore)
+        //     })
+        // } else {
             this.setState({
                 
                 lastCorrectAnswer: correctAnswer,
@@ -46,7 +44,7 @@ export default class QuestionMenu extends Component {
                 toggleAnswerOutcome: this.toggleAnswerOutcome(),
                 score: this.handleScore(option, correctAnswer, currentScore)
             })
-        }
+        // }
         
     }
 
@@ -60,13 +58,37 @@ export default class QuestionMenu extends Component {
     }
     
 
-    nextQuestion = () => {
-        // console.log('clicked next q')
-        const plusOne = this.state.antonymIndex + 1
-        this.setState({
-            antonymIndex: plusOne,
-            toggleAnswerOutcome: this.toggleAnswerOutcome()
-        })
+    nextQuestion = (wasCorrectAnswer, option) => {
+
+        const plusOne = this.state.questionIndex + 1
+        const correctAnswer = this.state.qAndAs[this.state.questionIndex].correctAnswer
+        const word = this.state.qAndAs[this.state.questionIndex].word
+        const currentScore = this.state.score
+
+        if(!wasCorrectAnswer){
+            const updatedQAndAs = insertQuestionBackIntoStack(this.state.qAndAs, this.state.questionIndex)
+            this.setState({
+                questionIndex: plusOne,
+                toggleAnswerOutcome: this.toggleAnswerOutcome(),
+                qAndAs: updatedQAndAs
+            })
+        } else {
+            if(this.state.questionIndex === this.state.qAndAs.length - 1){
+                this.setState({
+                    end: true,
+                    lastCorrectAnswer: correctAnswer,
+                    lastOptionChosen: option,
+                    lastWord: word,
+                    score: this.handleScore(option, correctAnswer, currentScore),
+                    toggleAnswerOutcome: this.toggleAnswerOutcome()
+                })  
+            } else {
+                this.setState({
+                    questionIndex: plusOne,
+                    toggleAnswerOutcome: this.toggleAnswerOutcome()
+                })
+            }
+        } 
     }
 
     toggleAnswerOutcome(){
@@ -74,20 +96,42 @@ export default class QuestionMenu extends Component {
         return toggledAnswerOutcome
     }
 
+    // nextQuestionOnIncorrectAnswer = (incorrectAnswer) => {
+    //     const newQandAs = insertQuestionBackIntoStack(this.state.qAndAs, incorrectAnswer, this.state.questionIndex)
+        
+    //     console.log('handleIncorrectAnswer')
+
+        
+    // }
+
+    startNewStudySession(){
+        this.setState({
+            questionIndex: 0,
+            answerOutcome:false,
+            end: false,
+            score: 0,
+            lastOptionChosen: false,
+            lastCorrectAnswer: '',
+            lastWord: '',
+            firstQuestion: true,
+            toggleAnswerOutcome: false,
+            qAndAs: createQAndAs(this.props.data, this.props.synOrAnt)
+        })
+    }
+    
 
     componentDidUpdate(){
-        // console.log('compupdate score', this.state.score)
+       console.log('componentDidUpdate: ', this.state.qAndAs)
+       console.log('toggleAnswerOutcome:', this.state.toggleAnswerOutcome)
+       console.log('end: ',this.state.end)
         
     }
-
-
-
 
 
     render() {
         // const qandAs = createQAndAs(this.props.data, this.props.synOrAnt)
         const qandAs = this.state.qAndAs
-        console.log(qandAs)
+       
         
         
         return (
@@ -96,18 +140,21 @@ export default class QuestionMenu extends Component {
                 {!this.state.toggleAnswerOutcome ? 
                     <div>
                         {this.state.end ? 
-                            <p>You scored {this.state.score} out of {this.state.qAndAs.length} </p> :  
                             <div>
-                                What is the {this.props.synOrAnt.slice(0, -1)} of: {qandAs[this.state.antonymIndex].word} 
+                                <p>Session over!</p> <button onClick={() => this.startNewStudySession()}>Study again?</button>
+                            </div>
+                             :  
+                            <div>
+                                What is the {this.props.synOrAnt.slice(0, -1)} of: {qandAs[this.state.questionIndex].word} 
                                 <div>
-                                    {qandAs[this.state.antonymIndex].options.map(option => {
+                                    {qandAs[this.state.questionIndex].options.map(option => {
                                         return <button key={option} onClick={() => this.handleOptionClick(option) }>{option}</button>
                                     })}
                                 </div>
                             </div>
                         }                      
                     </div> :
-                    <AnswerOutcome firstQuestion={this.state.firstQuestion} nextQuestion={this.nextQuestion} lastWord={this.state.lastWord} lastOptionChosen={this.state.lastOptionChosen} lastCorrectAnswer={this.state.lastCorrectAnswer} antonymIndex={this.state.antonymIndex}/>
+                    <AnswerOutcome handleIncorrectAnswer={this.handleIncorrectAnswer} firstQuestion={this.state.firstQuestion} nextQuestion={this.nextQuestion} lastWord={this.state.lastWord} lastOptionChosen={this.state.lastOptionChosen} lastCorrectAnswer={this.state.lastCorrectAnswer} questionIndex={this.state.questionIndex}/>
                 }
             </div>
         )

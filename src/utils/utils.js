@@ -26,7 +26,7 @@ export const createQAndAs = (wordData, synOrAnt) => {
     
     const randomData = []
     const wordDataLength = wordData.length
-    for (let i = 0; i < 20; i++) {  // get 20 random pieces of data
+    for (let i = 0; i < 5; i++) {  // get 20 random pieces of data
         const randomIndex = Math.floor(Math.random() * wordDataLength)
         if(synOrAnt === 'synonyms'){
             if(wordData[randomIndex].synonyms.length < 1 || wordData[randomIndex].antonyms.length < 2){ // make sure that for those pieces of data that 2 or more synonyms or antonyms exist 
@@ -72,4 +72,15 @@ export const createQAndAs = (wordData, synOrAnt) => {
     return formattedQandAs
     
     
+}
+
+export const insertQuestionBackIntoStack = (qAndAs, questionIndex) => {
+    // console.log('qAndAs: ',qAndAs)
+    
+    // console.log('questionIndex: ', questionIndex)
+    const questionToInsert = qAndAs[questionIndex]
+    const newQAndAs = [...qAndAs.slice(0, questionIndex + 3), questionToInsert, ...qAndAs.slice(questionIndex + 3)]
+
+    return newQAndAs
+
 }

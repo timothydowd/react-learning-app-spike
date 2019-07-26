@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import qsAndAs from '../src/data/qsAndAs.json'
 import wordData from '../src/data/word-data.json'
 import './App.css';
-import { formatJsonData, createQAndAs } from '../src/utils/utils'
+import { formatJsonData } from '../src/utils/utils'
 import Nav from './components/Nav'
 import { Router } from '@reach/router'
 import SynonymsStudy from './components/SynonymsStudy'
@@ -20,7 +19,6 @@ class App extends Component {
     }
   }
   render() {
-    console.log('fomatted json data: ', createQAndAs(formatJsonData(wordData), 'synonyms'))
     return (
       <div>
         <Nav/>
