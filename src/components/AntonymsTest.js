@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import QuestionTestSheet from './QuestionsSheetTest'
+import QuestionSheetTest from './QuestionsSheetTest'
 
 export default class AntonymsTest extends Component {
     render() {
         return (
             <div>
                 antonyms test
-                <QuestionTestSheet data={this.props.data} synOrAnt={'antonyms'} />
+                <QuestionSheetTest data={this.props.data} synOrAnt={'antonyms'} />
             </div>
         )
     }

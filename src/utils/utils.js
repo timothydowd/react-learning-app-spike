@@ -26,17 +26,39 @@ export const createQAndAs = (wordData, synOrAnt) => {
     
     const randomData = []
     const wordDataLength = wordData.length
-    for (let i = 0; i < 5; i++) {  // get 20 random pieces of data
+    for (let i = 0; i < 20; i++) {  // get 20 random pieces of data
         const randomIndex = Math.floor(Math.random() * wordDataLength)
         if(synOrAnt === 'synonyms'){
-            if(wordData[randomIndex].synonyms.length < 1 || wordData[randomIndex].antonyms.length < 2){ // make sure that for those pieces of data that 2 or more synonyms or antonyms exist 
+            if(wordData[randomIndex].synonyms.length < 1 || wordData[randomIndex].antonyms.length < 2 || // make sure that for those pieces of data that 2 or more synonyms or antonyms exist 
+                randomData.some(wordObject => { // and make sure that the same word isnt randomly chosen twice
+                    
+                    
+                    if(wordObject.word.trim() === wordData[randomIndex].word.trim()){
+                        
+                        return true
+                    } else{
+                        return false
+                    }
+                })
+                ){ 
                 i--
             }
             else{
                 randomData.push(wordData[randomIndex])
             }
         } else if(synOrAnt === 'antonyms') {
-            if(wordData[randomIndex].antonyms.length < 1 || wordData[randomIndex].synonyms.length < 2){ // make sure that for those pieces of data that 2 or more synonyms or antonyms exist 
+            if(wordData[randomIndex].antonyms.length < 1 || wordData[randomIndex].synonyms.length < 2 || // make sure that for those pieces of data that 2 or more synonyms or antonyms exist 
+                randomData.some(wordObject => { // and make sure that the same word isnt randomly chosen twice
+                   
+                    
+                    if(wordObject.word.trim() === wordData[randomIndex].word.trim()){
+                        
+                        return true
+                    } else{
+                        return false
+                    }
+                })
+                ){ // make sure that for those pieces of data that 2 or more synonyms or antonyms exist 
                 i--
             }
             else{
@@ -46,6 +68,9 @@ export const createQAndAs = (wordData, synOrAnt) => {
             
         
     }
+    
+
+ 
     
     const formattedQandAs = randomData.map((wordObject, index) => {
         // format to q and a 
@@ -68,7 +93,7 @@ export const createQAndAs = (wordData, synOrAnt) => {
         }
         
     })
-
+    console.log('questions: ', formattedQandAs)
     return formattedQandAs
     
     
