@@ -47,6 +47,8 @@ button {
   border: none;
   border-radius: 50px;
   margin: 10px;
+  background-color: lightgray;
+  -webkit-background-color: lightgray;
   
 }
 div {
