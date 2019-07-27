@@ -12,7 +12,7 @@ export default class AnswerOutcome extends Component {
                             <button onClick={() => this.props.nextQuestion(true, this.props.lastOptionChosen) }>Next Question</button>
                         </div> 
                         : <div>
-                            incorrect, the antonym of {this.props.lastWord} is {this.props.lastCorrectAnswer}
+                            incorrect, the {this.props.synOrAnt.slice(0, -1)} of {this.props.lastWord} is {this.props.lastCorrectAnswer}
                             
                             <button onClick={() => this.props.nextQuestion(false, this.props.lastOptionChosen) }>Next Question</button>
                         </div> 

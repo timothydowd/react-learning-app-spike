@@ -152,7 +152,7 @@ export default class QuestionMenu extends Component {
                             </div>
                         }                      
                     </div> :
-                    <AnswerOutcome handleIncorrectAnswer={this.handleIncorrectAnswer} firstQuestion={this.state.firstQuestion} nextQuestion={this.nextQuestion} lastWord={this.state.lastWord} lastOptionChosen={this.state.lastOptionChosen} lastCorrectAnswer={this.state.lastCorrectAnswer} questionIndex={this.state.questionIndex}/>
+                    <AnswerOutcome synOrAnt={this.props.synOrAnt} handleIncorrectAnswer={this.handleIncorrectAnswer} firstQuestion={this.state.firstQuestion} nextQuestion={this.nextQuestion} lastWord={this.state.lastWord} lastOptionChosen={this.state.lastOptionChosen} lastCorrectAnswer={this.state.lastCorrectAnswer} questionIndex={this.state.questionIndex}/>
                 }
             </div>
         )
