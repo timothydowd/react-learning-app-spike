@@ -18,12 +18,12 @@ export default class QuestionsSheetTest extends Component {
     addChoiceToState(choice, questionId){
         const newChoices = [...this.state.choices]
         newChoices[questionId - 1] = choice
-        console.log(newChoices)
+        
         this.setState({choices: newChoices})
     }
 
     submitAnswers(){
-        console.log(this.state.choices)
+       
         if((this.state.choices.includes(undefined) && this.state.choices.length < this.state.qAndAs.length) || this.state.choices.includes(undefined) || this.state.choices.length < this.state.qAndAs.length ){
             alert("Please answer all questions")
         } else {
@@ -47,7 +47,7 @@ export default class QuestionsSheetTest extends Component {
         })
 
         const score = `${correctCount} out of ${qAndAs.length}`
-        console.log('testSummary', testSummary)
+        
 
         this.setState({testFinished: true, testSummary, score})
     }
@@ -67,7 +67,7 @@ export default class QuestionsSheetTest extends Component {
                 <div>
                     {qAndAs.map(questionObject => {
                         return(
-                            <div key={questionObject.id}>
+                            <div key={questionObject.id} className='questionBlock'>
                                  <p>What is the {this.props.synOrAnt.slice(0,-1)} of {questionObject.word}?</p>
                                  {questionObject.options.map(option => {
                                    
@@ -97,15 +97,15 @@ export default class QuestionsSheetTest extends Component {
             return (
             
                 <div>
-                    <p>Test Summary:</p>
+                    <h3>Test Summary:</h3>
                     {testSummary.map(summaryObject => {
                         if(summaryObject.correct){
                             return (
-                                <div>What is the {this.props.synOrAnt.slice(0,-1)} of {summaryObject.word}? you answered: {summaryObject.yourAnswer}... <div style={correctStyle}>Correct!</div></div>
+                                <div key={summaryObject.word} className='testSummaryBlock'>What is the {this.props.synOrAnt.slice(0,-1)} of {summaryObject.word}? you answered: {summaryObject.yourAnswer}... <div style={correctStyle}>Correct!</div></div>
                             )
                         } else {
                             return (
-                                <div>What is the {this.props.synOrAnt.slice(0,-1)} of {summaryObject.word}? you answered: {summaryObject.yourAnswer}... <div style={incorrectStyle}>Incorrect, the correct answer was {summaryObject.correctAnswer}</div> </div>
+                                <div key={summaryObject.word} className='testSummaryBlock'>What is the {this.props.synOrAnt.slice(0,-1)} of {summaryObject.word}? you answered: {summaryObject.yourAnswer}... <div style={incorrectStyle}>Incorrect, the correct answer was {summaryObject.correctAnswer}</div> </div>
                             )
                         }
                         

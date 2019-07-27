@@ -5,7 +5,7 @@ export default class AntonymsTest extends Component {
     render() {
         return (
             <div>
-                antonyms test
+                <h2>Antonyms Test</h2>
                 <QuestionSheetTest data={this.props.data} synOrAnt={'antonyms'} />
             </div>
         )

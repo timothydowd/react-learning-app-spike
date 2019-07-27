@@ -23,6 +23,59 @@
   color: #61dafb;
 }
 
+.questionBlock {
+  margin: 2.5rem;
+}
+
+.questionStudyContainer {
+  margin: 2rem;
+}
+
+.testSummaryBlock {
+  margin: 2.5rem;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(45, 216, 45);
+}
+
+button {
+  padding: 9px 25px;
+  border: none;
+  border-radius: 50px;
+  margin: 10px;
+  
+}
+div {
+  text-align: center;
+}
+
+h1 {
+  margin: 1rem;
+  text-align: center;
+}
+h2 {
+  margin: 1rem;
+  text-align: center;
+}
+h3 {
+  margin: 1rem;
+  text-align: center;
+}
+
+
+.navLinks {
+  list-style: none;
+}
+
+.navLinks li {
+  display: inline-block;
+  padding: 5px 20px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

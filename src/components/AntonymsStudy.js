@@ -6,9 +6,7 @@ export default class AntonymsStudy extends Component {
     render() {
         return (
             <div>
-                <p/>
-                antonyms study
-                <p/>
+                <h2>Antonyms Study</h2>
                 <QuestionMenu data={this.props.data} synOrAnt={'antonyms'} />
             </div>
                 

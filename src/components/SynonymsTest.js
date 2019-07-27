@@ -5,7 +5,7 @@ export default class SynonymsTest extends Component {
     render() {
         return (
             <div>
-                synonyms test
+                <h2>Synonyms Test</h2>
                 <QuestionSheetTest data={this.props.data} synOrAnt={'synonyms'} />
             </div>
         )

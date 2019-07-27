@@ -24,7 +24,7 @@ class App extends Component {
         <Nav/>
         
         <Router>
-          <Home path="/" />
+          <Home path="/" data={this.state.data} />
           <SynonymsStudy path="synonyms_study" data={this.state.data} />
           <AntonymsStudy path="antonyms_study" data={this.state.data} />
           <SynonymsTest path="synonyms_test" data={this.state.data} />

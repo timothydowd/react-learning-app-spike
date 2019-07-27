@@ -133,7 +133,7 @@ export default class QuestionMenu extends Component {
         
         
         return (
-            <div>
+            <div className='questionStudyContainer' >
                 
                 {!this.state.toggleAnswerOutcome ? 
                     <div>

@@ -7,9 +7,7 @@ export default class SynonymsStudy extends Component {
     render() {
         return (
             <div>
-                <p/>
-                synonyms study
-                <p/>
+                <h2>Synonyms Study</h2>
                 <QuestionMenu data={this.props.data} synOrAnt={'synonyms'} />
             </div>
                 

@@ -58,7 +58,7 @@ export const createQAndAs = (wordData, synOrAnt) => {
                         return false
                     }
                 })
-                ){ // make sure that for those pieces of data that 2 or more synonyms or antonyms exist 
+                ){ 
                 i--
             }
             else{
@@ -107,5 +107,49 @@ export const insertQuestionBackIntoStack = (qAndAs, questionIndex) => {
     const newQAndAs = [...qAndAs.slice(0, questionIndex + 3), questionToInsert, ...qAndAs.slice(questionIndex + 3)]
 
     return newQAndAs
+
+}
+
+export const getTotalValidSynsAndAnts = (wordData) => {
+    console.log('wordData.length: ', wordData.length)
+    const maxWordSyn = wordData.reduce((accValidWordsData, datum) => {
+        if(datum.synonyms.length < 1 || datum.antonyms.length < 2 || 
+            accValidWordsData.some(wordObject => { // and make sure that the same word isnt randomly chosen twice      
+                if(wordObject.word.trim() === datum.word.trim()){
+                    return true
+                } else{
+                    return false
+                }
+            })
+        ){
+            return accValidWordsData
+        } else {
+            return [...accValidWordsData, datum]
+        }
+    },[])
+
+    console.log('maxWordSyn.length: ', maxWordSyn.length)
+
+    const maxWordAnt = wordData.reduce((accValidWordsData, datum) => {
+        if(datum.antonyms.length < 1 || datum.synonyms.length < 2 || 
+            accValidWordsData.some(wordObject => { // and make sure that the same word isnt randomly chosen twice      
+                if(wordObject.word.trim() === datum.word.trim()){
+                    return true
+                } else{
+                    return false
+                }
+            })
+        ){
+            return accValidWordsData
+        } else {
+            return [...accValidWordsData, datum]
+        }
+    },[])
+
+    console.log('maxWordAnt.length: ', maxWordAnt.length)
+    console.log(maxWordAnt)
+    return { validSyns: maxWordSyn.length, validAnts: maxWordAnt.length }
+    
+    
 
 }
