@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import AnswerOutcome from './AnswerOutcome'
 import { createQAndAs, insertQuestionBackIntoStack } from '../utils/utils'
+import { connect } from 'react-redux'
 
-export default class QuestionMenu extends Component {
+class QuestionMenu extends Component {
     constructor (props) {
         super(props)
+        this.qAndAs = createQAndAs(props.data, this.props.synOrAnt)
         this.state = {
             questionIndex: 0,
             answerOutcome:false,
@@ -21,8 +23,8 @@ export default class QuestionMenu extends Component {
 
     handleOptionClick (option) {
        
-        const correctAnswer = this.state.qAndAs[this.state.questionIndex].correctAnswer
-        const word = this.state.qAndAs[this.state.questionIndex].word
+        const correctAnswer = this.qAndAs[this.state.questionIndex].correctAnswer
+        const word = this.qAndAs[this.state.questionIndex].word
         const currentScore = this.state.score
         
 
@@ -61,19 +63,19 @@ export default class QuestionMenu extends Component {
     nextQuestion = (wasCorrectAnswer, option) => {
 
         const plusOne = this.state.questionIndex + 1
-        const correctAnswer = this.state.qAndAs[this.state.questionIndex].correctAnswer
-        const word = this.state.qAndAs[this.state.questionIndex].word
+        const correctAnswer = this.qAndAs[this.state.questionIndex].correctAnswer
+        const word = this.qAndAs[this.state.questionIndex].word
         const currentScore = this.state.score
 
         if(!wasCorrectAnswer){
-            const updatedQAndAs = insertQuestionBackIntoStack(this.state.qAndAs, this.state.questionIndex)
+            const updatedQAndAs = insertQuestionBackIntoStack(this.qAndAs, this.state.questionIndex)
             this.setState({
                 questionIndex: plusOne,
                 toggleAnswerOutcome: this.toggleAnswerOutcome(),
                 qAndAs: updatedQAndAs
             })
         } else {
-            if(this.state.questionIndex === this.state.qAndAs.length - 1){
+            if(this.state.questionIndex === this.qAndAs.length - 1){
                 this.setState({
                     end: true,
                     lastCorrectAnswer: correctAnswer,
@@ -128,7 +130,7 @@ export default class QuestionMenu extends Component {
 
     render() {
         // const qandAs = createQAndAs(this.props.data, this.props.synOrAnt)
-        const qandAs = this.state.qAndAs
+        const qandAs = this.qAndAs
        
         
         
@@ -158,3 +160,11 @@ export default class QuestionMenu extends Component {
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        data: state.data
+    }
+}
+
+export default connect(mapStateToProps)(QuestionMenu)
