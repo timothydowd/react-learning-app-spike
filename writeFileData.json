@@ -1,0 +1,343 @@
+[{
+    "rootWord": "Oppose",
+    "synonyms": [{
+        "language": "en",
+        "text": "be against"
+    }, {
+        "language": "en",
+        "text": "object to"
+    }, {
+        "language": "en",
+        "text": "be hostile to"
+    }, {
+        "language": "en",
+        "text": "be anti"
+    }, {
+        "language": "en",
+        "text": "be in opposition to"
+    }, {
+        "language": "en",
+        "text": "disagree with"
+    }, {
+        "id": "dislike",
+        "language": "en",
+        "text": "dislike"
+    }, {
+        "language": "en",
+        "text": "disapprove of"
+    }],
+    "antonyms": [{
+        "id": "support",
+        "language": "en",
+        "text": "support"
+    }, {
+        "id": "defend",
+        "language": "en",
+        "text": "defend"
+    }, {
+        "id": "promote",
+        "language": "en",
+        "text": "promote"
+    }]
+}, {
+    "rootWord": "Insert",
+    "synonyms": [{
+        "id": "put",
+        "language": "en",
+        "text": "put"
+    }, {
+        "id": "place",
+        "language": "en",
+        "text": "place"
+    }, {
+        "id": "press",
+        "language": "en",
+        "text": "press"
+    }, {
+        "id": "push",
+        "language": "en",
+        "text": "push"
+    }, {
+        "id": "thrust",
+        "language": "en",
+        "text": "thrust"
+    }, {
+        "id": "slide",
+        "language": "en",
+        "text": "slide"
+    }, {
+        "id": "slip",
+        "language": "en",
+        "text": "slip"
+    }, {
+        "id": "load",
+        "language": "en",
+        "text": "load"
+    }, {
+        "id": "fit",
+        "language": "en",
+        "text": "fit"
+    }, {
+        "id": "position",
+        "language": "en",
+        "text": "position"
+    }, {
+        "id": "slot",
+        "language": "en",
+        "text": "slot"
+    }, {
+        "id": "lodge",
+        "language": "en",
+        "text": "lodge"
+    }, {
+        "id": "install",
+        "language": "en",
+        "text": "install"
+    }],
+    "antonyms": [{
+        "language": "en",
+        "text": "take out"
+    }, {
+        "id": "extract",
+        "language": "en",
+        "text": "extract"
+    }]
+}, {
+    "rootWord": "Unite",
+    "synonyms": [{
+        "id": "unify",
+        "language": "en",
+        "text": "unify"
+    }, {
+        "id": "join",
+        "language": "en",
+        "text": "join"
+    }, {
+        "id": "link",
+        "language": "en",
+        "text": "link"
+    }, {
+        "id": "connect",
+        "language": "en",
+        "text": "connect"
+    }, {
+        "id": "combine",
+        "language": "en",
+        "text": "combine"
+    }, {
+        "id": "amalgamate",
+        "language": "en",
+        "text": "amalgamate"
+    }, {
+        "id": "fuse",
+        "language": "en",
+        "text": "fuse"
+    }, {
+        "id": "integrate",
+        "language": "en",
+        "text": "integrate"
+    }, {
+        "id": "weld",
+        "language": "en",
+        "text": "weld"
+    }, {
+        "id": "bond",
+        "language": "en",
+        "text": "bond"
+    }, {
+        "language": "en",
+        "text": "stick together"
+    }, {
+        "language": "en",
+        "text": "bring together"
+    }, {
+        "language": "en",
+        "text": "knit together"
+    }],
+    "antonyms": [{
+        "id": "divide",
+        "language": "en",
+        "text": "divide"
+    }, {
+        "id": "separate",
+        "language": "en",
+        "text": "separate"
+    }]
+}, {
+    "rootWord": "Volatile",
+    "synonyms": [{
+        "id": "unpredictable",
+        "language": "en",
+        "text": "unpredictable"
+    }, {
+        "id": "changeable",
+        "language": "en",
+        "text": "changeable"
+    }, {
+        "id": "variable",
+        "language": "en",
+        "text": "variable"
+    }, {
+        "id": "inconstant",
+        "language": "en",
+        "text": "inconstant"
+    }, {
+        "id": "inconsistent",
+        "language": "en",
+        "text": "inconsistent"
+    }, {
+        "id": "uncertain",
+        "language": "en",
+        "text": "uncertain"
+    }, {
+        "id": "erratic",
+        "language": "en",
+        "text": "erratic"
+    }, {
+        "id": "irregular",
+        "language": "en",
+        "text": "irregular"
+    }, {
+        "id": "unstable",
+        "language": "en",
+        "text": "unstable"
+    }, {
+        "id": "turbulent",
+        "language": "en",
+        "text": "turbulent"
+    }, {
+        "id": "unsteady",
+        "language": "en",
+        "text": "unsteady"
+    }, {
+        "id": "unsettled",
+        "language": "en",
+        "text": "unsettled"
+    }, {
+        "id": "unreliable",
+        "language": "en",
+        "text": "unreliable"
+    }, {
+        "language": "en",
+        "text": "undependable"
+    }, {
+        "language": "en",
+        "text": "changing"
+    }, {
+        "language": "en",
+        "text": "ever-changing"
+    }, {
+        "id": "varying",
+        "language": "en",
+        "text": "varying"
+    }, {
+        "language": "en",
+        "text": "shifting"
+    }, {
+        "language": "en",
+        "text": "fluctuating"
+    }, {
+        "id": "fluid",
+        "language": "en",
+        "text": "fluid"
+    }, {
+        "id": "mutable",
+        "language": "en",
+        "text": "mutable"
+    }, {
+        "id": "protean",
+        "language": "en",
+        "text": "protean"
+    }, {
+        "id": "fitful",
+        "language": "en",
+        "text": "fitful"
+    }, {
+        "language": "en",
+        "text": "wavering"
+    }, {
+        "language": "en",
+        "text": "full of ups and downs"
+    }],
+    "antonyms": [{
+        "id": "stable",
+        "language": "en",
+        "text": "stable"
+    }, {
+        "id": "constant",
+        "language": "en",
+        "text": "constant"
+    }]
+}, {
+    "rootWord": "Inaugurate",
+    "synonyms": [{
+        "id": "initiate",
+        "language": "en",
+        "text": "initiate"
+    }, {
+        "id": "begin",
+        "language": "en",
+        "text": "begin"
+    }, {
+        "id": "start",
+        "language": "en",
+        "text": "start"
+    }, {
+        "id": "institute",
+        "language": "en",
+        "text": "institute"
+    }, {
+        "id": "launch",
+        "language": "en",
+        "text": "launch"
+    }, {
+        "language": "en",
+        "text": "start off"
+    }, {
+        "language": "en",
+        "text": "set in motion"
+    }, {
+        "id": "get_going",
+        "language": "en",
+        "text": "get going"
+    }, {
+        "language": "en",
+        "text": "get under way"
+    }, {
+        "id": "get_off_the_ground",
+        "language": "en",
+        "text": "get off the ground"
+    }, {
+        "id": "establish",
+        "language": "en",
+        "text": "establish"
+    }, {
+        "id": "originate",
+        "language": "en",
+        "text": "originate"
+    }, {
+        "language": "en",
+        "text": "put in place"
+    }, {
+        "language": "en",
+        "text": "lay the foundations of"
+    }, {
+        "language": "en",
+        "text": "lay the first stone of"
+    }, {
+        "language": "en",
+        "text": "lay the cornerstone of"
+    }, {
+        "language": "en",
+        "text": "bring up the curtain on"
+    }],
+    "antonyms": [{
+        "id": "end",
+        "language": "en",
+        "text": "end"
+    }, {
+        "id": "wind_up",
+        "language": "en",
+        "text": "wind up"
+    }]
+}]
