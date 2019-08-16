@@ -1,7 +1,7 @@
 const config = require('../config.json')
 const axios = require('axios')
 const fs = require('fs')
-const wordData = require('../data/word-data.json')
+
 
 
 const formatJsonData = (json) => {
@@ -221,11 +221,12 @@ const writeEmptyWordDataJson = (rootWords) => {
 
 }
 
-const formatFetchedDataAndWriteToFile = (rootWord, fetchedData) => {
+const formatFetchedDataAndWriteToFile = (rootWord, fetchedData, wordData) => {
     
     const antonyms = fetchedData.data.results[0].lexicalEntries[0].entries[0].senses[0].antonyms
     const synonyms = fetchedData.data.results[0].lexicalEntries[0].entries[0].senses[0].synonyms
     const formattedData = { rootWord }
+
 
     for(let i = 1; i <= 4; i++){
         if('id' in synonyms[i-1]) formattedData[`Synonym ${i}`] = synonyms[i-1].id
@@ -239,7 +240,7 @@ const formatFetchedDataAndWriteToFile = (rootWord, fetchedData) => {
         else formattedData[`Antonym ${i}`] = ''
     }
 
-    fs.writeFile("./writeFileData.json", JSON.stringify(formattedData), err => {
+    fs.writeFile("./word-data.json", JSON.stringify(formattedData), err => {
         if (err) {
             console.error(err);
             return;
