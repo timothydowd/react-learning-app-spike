@@ -1,6 +1,7 @@
 const config = require('../config.json')
 const axios = require('axios')
 const fs = require('fs')
+const wordData = require('../data/word-data.json')
 
 
 const formatJsonData = (json) => {
@@ -160,93 +161,92 @@ const extractRootWords = data => {
     const rootWords = data.map(wordObject => {
       return wordObject.Word.trim()
     })
-    
-    return rootWords
-}
 
-
-
-
-
-const fetchWordInfos = async (data, synAnt, nToBeReturned) => {
-
-        const extractedRootWords = extractRootWords(data)
-        
-        let randomData = []
-        let antonyms =''
-        let synonyms = ''
-
-        for(let i = 0; i < nToBeReturned; i++){
-            const randomIndex = Math.floor(Math.random() * extractedRootWords.length)
-            const rootWord = extractedRootWords[randomIndex]
-            const URL = `https://od-api.oxforddictionaries.com/api/v2/thesaurus/en-gb/${rootWord}?strictMatch=false`;
-                try{
-                    const response = await axios.get(URL, config)
-                antonyms = response.data.results[0].lexicalEntries[0].entries[0].senses[0].antonyms
-                console.log('rootWord: ', rootWord, '///////////////////////////////////////////')
-                
-                synonyms = response.data.results[0].lexicalEntries[0].entries[0].senses[0].synonyms
-                
-                } catch(err) {
-                            console.log('error:',err.response.data)
-                        }
-            
-            if(synAnt === 'synonyms'){
-                if(!antonyms || !synonyms || antonyms.length < 2 || synonyms.length < 1){
-                    i--
-                    console.log('no diggity')
-                } else { 
-                    console.log('anotnyms: ', antonyms)
-                    console.log('synonyms: ', synonyms)
-                    randomData.push({rootWord, synonyms: synonyms, antonyms: antonyms })
-                }
-            } else if(synAnt === 'antonyms'){
-                if(!antonyms || !synonyms || synonyms.length < 2 || antonyms.length < 1){
-                    i--
-                    console.log('no diggity')
-                } else { 
-                    console.log('anotnyms: ', antonyms)
-                    console.log('synonyms: ', synonyms)
-                    randomData.push({rootWord, synonyms: synonyms, antonyms: antonyms })
-                }
-            }
+    fs.writeFile("./rootWords.json", JSON.stringify(rootWords), err => {
+        if (err) {
+            console.error(err);
+            return;
         }
+        //file written successfully
+        });
+    
+    
+}
 
-        fs.writeFile("./writeFileData.json", JSON.stringify(randomData), err => {
-            if (err) {
-              console.error(err);
-              return;
-            }
-            //file written successfully
-          });
+
+
+
+
+const fetchWordInfos = async (data, rootWord) => {
+
         
+
+        let response
+        const URL = `https://od-api.oxforddictionaries.com/api/v2/thesaurus/en-gb/${rootWord}?strictMatch=false`;
+            try{
+                response = await axios.get(URL, config)
             
-        return randomData
+            }   catch(err) {
+                console.log('error:',err.response.data)
+            }
 
-    
+            formatFetchedDataAndWriteToFile(rootWord, response)
+        
 }
 
-const formatFetchedData = (fetchedData) => {
-    const formattedData = fetchedData.reduce((reducedData, object) => {
-        const word = object["rootWord"].trim()
-        const synonyms = [object.synonyms[0].id || object.synonyms[0].text, object.synonyms[1].id || object.synonyms[1] || "", object.synonyms[2].id || object.synonyms[2] || "", object.synonyms[3].id || object.synonyms[3] || ""]
-        const antonyms = [object.antonyms[0].id || object.antonyms[0].text, object.antonyms[1].id || object.antonyms[1] || "", object.antonyms[2].id || object.antonyms[2] || "", object.antonyms[3].id || object.antonyms[3] || ""]
-        // const synonyms = [object["Synonym 1"], object["Synonym 2"], object["Synonym 3"], object["Synonym 4"]]
-       
+const writeEmptyWordDataJson = (rootWords) => {
+    const emptyJson = rootWords.map(word => {
+        return {
+            Word: word,
+            "Synonym 1": "",
+            "Synonym 2": "",
+            "Synonym 3": "",
+            "Synonym 4": "",
+            "Antonym 1": "",
+            "Antonym 2": "",
+            "Antonym 3": "",
+            "Antonym 4": ""
+          }
+    })
 
-        const removedBlankSynonyms = synonyms.reduce((reducedSynonyms, synonym) => {
-            return synonym === "" ? [...reducedSynonyms] : [ ...reducedSynonyms, synonym]    
-        },[])
+    fs.writeFile("./emptyWordData.json", JSON.stringify(emptyJson, null, 2), err => {
+        if (err) {
+            console.error(err);
+            return;
+        }
+        //file written successfully
+        });
 
-        const removedBlankAntonyms = antonyms.reduce((reducedAntonyms, antonym) => {
-            return antonym === "" ? [...reducedAntonyms] : [ ...reducedAntonyms, antonym]    
-        },[])
 
-        return [ ...reducedData, { word, synonyms: removedBlankSynonyms, antonyms: removedBlankAntonyms}]
-    },[])
-
-    
-    return formattedData
 }
 
-  module.exports = { formatJsonData, createQAndAs, insertQuestionBackIntoStack, getTotalValidSynsAndAnts, extractRootWords, fetchWordInfos }
+const formatFetchedDataAndWriteToFile = (rootWord, fetchedData) => {
+    
+    const antonyms = fetchedData.data.results[0].lexicalEntries[0].entries[0].senses[0].antonyms
+    const synonyms = fetchedData.data.results[0].lexicalEntries[0].entries[0].senses[0].synonyms
+    const formattedData = { rootWord }
+
+    for(let i = 1; i <= 4; i++){
+        if('id' in synonyms[i-1]) formattedData[`Synonym ${i}`] = synonyms[i-1].id
+        else if('text' in synonyms[i-1]) formattedData[`Synonym ${i}`] = synonyms[i-1].text
+        else formattedData[`Synonym ${i}`] = ''
+    }
+
+    for(let i = 1; i <= 4; i++){
+        if('id' in antonyms[i-1]) formattedData[`Antonym ${i}`] = antonyms[i-1].id
+        else if('text' in antonyms[i-1]) formattedData[`Antonym ${i}`] = antonyms[i-1].text
+        else formattedData[`Antonym ${i}`] = ''
+    }
+
+    fs.writeFile("./writeFileData.json", JSON.stringify(formattedData), err => {
+        if (err) {
+            console.error(err);
+            return;
+        }
+        //file written successfully
+        });
+
+    return formattedData   
+}
+
+  module.exports = { formatJsonData, createQAndAs, insertQuestionBackIntoStack, getTotalValidSynsAndAnts, extractRootWords, fetchWordInfos, writeEmptyWordDataJson }
