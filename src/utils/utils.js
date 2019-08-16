@@ -205,7 +205,8 @@ const writeEmptyWordDataJson = (rootWords) => {
             "Antonym 1": "",
             "Antonym 2": "",
             "Antonym 3": "",
-            "Antonym 4": ""
+            "Antonym 4": "",
+            checked: false
           }
     })
 
@@ -245,8 +246,6 @@ const formatFetchedDataAndWriteToFile = (rootWord, fetchedData) => {
         }
         //file written successfully
         });
-
-    return formattedData   
 }
 
   module.exports = { formatJsonData, createQAndAs, insertQuestionBackIntoStack, getTotalValidSynsAndAnts, extractRootWords, fetchWordInfos, writeEmptyWordDataJson }
