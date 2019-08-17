@@ -7,9 +7,16 @@
   },
   {
     "word": "Because",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "since",
+      "as",
+      "for the reason that",
+      "in view of the fact that"
+    ],
+    "antonyms": [
+      "despite"
+    ],
+    "checked": true
   },
   {
     "word": "Beck",
@@ -49,15 +56,27 @@
   },
   {
     "word": "Betray",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "break one's promise to",
+      "be disloyal to",
+      "be unfaithful to",
+      "break_faith_with"
+    ],
+    "antonyms": [
+      "be loyal to"
+    ],
+    "checked": true
   },
   {
     "word": "Bewildered",
-    "synonyms": [],
+    "synonyms": [
+      "baffled",
+      "mystified",
+      "bemused",
+      "perplexed"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Bicycle",
@@ -115,15 +134,28 @@
   },
   {
     "word": "Calamity",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "disaster",
+      "catastrophe",
+      "tragedy",
+      "cataclysm"
+    ],
+    "antonyms": [
+      "godsend",
+      "blessing"
+    ],
+    "checked": true
   },
   {
     "word": "Candidate",
-    "synonyms": [],
+    "synonyms": [
+      "applicant",
+      "job applicant",
+      "job-seeker",
+      "prospective employee"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Chaos",
@@ -163,9 +195,16 @@
   },
   {
     "word": "Coarse",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "rough",
+      "bristly",
+      "scratchy",
+      "prickly"
+    ],
+    "antonyms": [
+      "soft"
+    ],
+    "checked": true
   },
   {
     "word": "Coax",
@@ -193,9 +232,14 @@
   },
   {
     "word": "Commit",
-    "synonyms": [],
+    "synonyms": [
+      "carry out",
+      "do",
+      "perform",
+      "perpetrate"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Commit",
@@ -211,9 +255,17 @@
   },
   {
     "word": "Communicate",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "convey",
+      "tell",
+      "impart",
+      "relay"
+    ],
+    "antonyms": [
+      "withhold from",
+      "keep secret"
+    ],
+    "checked": true
   },
   {
     "word": "Community",
@@ -253,9 +305,14 @@
   },
   {
     "word": "Competition",
-    "synonyms": [],
+    "synonyms": [
+      "contest",
+      "tournament",
+      "match",
+      "game"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Completely",
@@ -265,15 +322,28 @@
   },
   {
     "word": "Complex",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "complicated",
+      "involved",
+      "intricate",
+      "convoluted"
+    ],
+    "antonyms": [
+      "simple",
+      "straightforward"
+    ],
+    "checked": true
   },
   {
     "word": "Composition",
-    "synonyms": [],
+    "synonyms": [
+      "make-up",
+      "constitution",
+      "configuration",
+      "structure"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Composition",
@@ -295,9 +365,17 @@
   },
   {
     "word": "Conceal",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "hide",
+      "keep out of sight",
+      "keep hidden",
+      "secrete"
+    ],
+    "antonyms": [
+      "reveal",
+      "expose"
+    ],
+    "checked": true
   },
   {
     "word": "Conceited",
@@ -307,15 +385,29 @@
   },
   {
     "word": "Concentrated",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "strenuous",
+      "concerted",
+      "intensive",
+      "intense"
+    ],
+    "antonyms": [
+      "half-hearted"
+    ],
+    "checked": true
   },
   {
     "word": "Concentrated",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "strenuous",
+      "concerted",
+      "intensive",
+      "intense"
+    ],
+    "antonyms": [
+      "half-hearted"
+    ],
+    "checked": true
   },
   {
     "word": "Conclude",
@@ -325,15 +417,31 @@
   },
   {
     "word": "Conclusion",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "end",
+      "ending",
+      "finish",
+      "close"
+    ],
+    "antonyms": [
+      "beginning",
+      "start"
+    ],
+    "checked": true
   },
   {
     "word": "Condemn",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "censure",
+      "criticize",
+      "castigate",
+      "attack"
+    ],
+    "antonyms": [
+      "praise",
+      "commend"
+    ],
+    "checked": true
   },
   {
     "word": "Conferred",
@@ -355,9 +463,16 @@
   },
   {
     "word": "Consent",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "agreement",
+      "assent",
+      "concurrence",
+      "accord"
+    ],
+    "antonyms": [
+      "dissent"
+    ],
+    "checked": true
   },
   {
     "word": "Conserve",
@@ -373,9 +488,14 @@
   },
   {
     "word": "Consideration",
-    "synonyms": [],
+    "synonyms": [
+      "thought",
+      "deliberation",
+      "reflection",
+      "contemplation"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Consideration",
@@ -403,9 +523,14 @@
   },
   {
     "word": "Contemporary",
-    "synonyms": [],
+    "synonyms": [
+      "contemporaneous",
+      "concurrent",
+      "coeval",
+      "synchronous"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Contempt",
@@ -421,15 +546,25 @@
   },
   {
     "word": "Contest",
-    "synonyms": [],
+    "synonyms": [
+      "competition",
+      "match",
+      "tournament",
+      "game"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Contest",
-    "synonyms": [],
+    "synonyms": [
+      "competition",
+      "match",
+      "tournament",
+      "game"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Contrast",
@@ -445,27 +580,49 @@
   },
   {
     "word": "Conventional",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "orthodox",
+      "traditional",
+      "established",
+      "accepted"
+    ],
+    "antonyms": [
+      "unorthodox"
+    ],
+    "checked": true
   },
   {
     "word": "Convert",
-    "synonyms": [],
+    "synonyms": [
+      "change",
+      "turn",
+      "transform",
+      "metamorphose"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Convey",
-    "synonyms": [],
+    "synonyms": [
+      "transport",
+      "carry",
+      "bring",
+      "take"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Convey",
-    "synonyms": [],
+    "synonyms": [
+      "transport",
+      "carry",
+      "bring",
+      "take"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Convict",
@@ -475,9 +632,14 @@
   },
   {
     "word": "Convince",
-    "synonyms": [],
+    "synonyms": [
+      "persuade",
+      "satisfy",
+      "prove to",
+      "cause to feel certain"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Covert",
@@ -487,9 +649,14 @@
   },
   {
     "word": "Covet",
-    "synonyms": [],
+    "synonyms": [
+      "desire",
+      "be consumed with desire for",
+      "crave",
+      "have one's heart set on"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Coy",
@@ -505,9 +672,14 @@
   },
   {
     "word": "Cultivate",
-    "synonyms": [],
+    "synonyms": [
+      "till",
+      "plough",
+      "dig",
+      "turn"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Cunning",
@@ -541,9 +713,14 @@
   },
   {
     "word": "Debate",
-    "synonyms": [],
+    "synonyms": [
+      "discussion",
+      "exchange of views",
+      "discourse",
+      "parley"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Debrief",
@@ -559,9 +736,16 @@
   },
   {
     "word": "Decline",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "turn down",
+      "reject",
+      "brush aside",
+      "refuse"
+    ],
+    "antonyms": [
+      "accept"
+    ],
+    "checked": true
   },
   {
     "word": "Definite",
@@ -679,9 +863,16 @@
   },
   {
     "word": "Diluted",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "weak",
+      "dilute",
+      "thin",
+      "thinned out"
+    ],
+    "antonyms": [
+      "concentrated"
+    ],
+    "checked": true
   },
   {
     "word": "Disarray",
@@ -691,21 +882,46 @@
   },
   {
     "word": "Disastrous",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "catastrophic",
+      "calamitous",
+      "cataclysmic",
+      "tragic"
+    ],
+    "antonyms": [
+      "fortunate",
+      "successful",
+      "beneficial"
+    ],
+    "checked": true
   },
   {
     "word": "Disclose",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "reveal",
+      "make_known",
+      "divulge",
+      "tell"
+    ],
+    "antonyms": [
+      "conceal",
+      "hide"
+    ],
+    "checked": true
   },
   {
     "word": "Discontent",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "dissatisfaction",
+      "disaffection",
+      "discontentment",
+      "discontentedness"
+    ],
+    "antonyms": [
+      "contentment",
+      "satisfaction"
+    ],
+    "checked": true
   },
   {
     "word": "Dishevelled",
@@ -745,9 +961,17 @@
   },
   {
     "word": "Distinguished",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "eminent",
+      "famous",
+      "famed",
+      "renowned"
+    ],
+    "antonyms": [
+      "unknown",
+      "obscure"
+    ],
+    "checked": true
   },
   {
     "word": "Distress",
@@ -763,9 +987,14 @@
   },
   {
     "word": "Divinity",
-    "synonyms": [],
+    "synonyms": [
+      "divine nature",
+      "divineness",
+      "godliness",
+      "deity"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Domestic",
@@ -775,15 +1004,25 @@
   },
   {
     "word": "Dose",
-    "synonyms": [],
+    "synonyms": [
+      "amount",
+      "quantity",
+      "measure",
+      "portion"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Drought",
-    "synonyms": [],
+    "synonyms": [
+      "dry spell",
+      "dry period",
+      "lack of rain",
+      "shortage of water"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Dumb",
@@ -799,15 +1038,30 @@
   },
   {
     "word": "Earnest",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "serious",
+      "serious-minded",
+      "solemn",
+      "grave"
+    ],
+    "antonyms": [
+      "frivolous",
+      "apathetic"
+    ],
+    "checked": true
   },
   {
     "word": "Economical",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "cheap",
+      "inexpensive",
+      "low-cost",
+      "low-price"
+    ],
+    "antonyms": [
+      "expensive"
+    ],
+    "checked": true
   },
   {
     "word": "Elect",
@@ -823,9 +1077,14 @@
   },
   {
     "word": "Embarrass",
-    "synonyms": [],
+    "synonyms": [
+      "shame",
+      "humiliate",
+      "make ashamed",
+      "demean"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Embrace",
@@ -835,15 +1094,27 @@
   },
   {
     "word": "Emerge",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "come_out",
+      "appear",
+      "come into view",
+      "become visible"
+    ],
+    "antonyms": [
+      "disappear"
+    ],
+    "checked": true
   },
   {
     "word": "Empire",
-    "synonyms": [],
+    "synonyms": [
+      "kingdom",
+      "realm",
+      "domain",
+      "territory"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Employ",
@@ -859,15 +1130,25 @@
   },
   {
     "word": "Endure",
-    "synonyms": [],
+    "synonyms": [
+      "undergo",
+      "go_through",
+      "live through",
+      "experience"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Enterprise",
-    "synonyms": [],
+    "synonyms": [
+      "undertaking",
+      "endeavour",
+      "venture",
+      "pursuit"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Entire",
@@ -883,9 +1164,14 @@
   },
   {
     "word": "Equip",
-    "synonyms": [],
+    "synonyms": [
+      "provide",
+      "furnish",
+      "supply",
+      "issue"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Erect",
@@ -907,15 +1193,25 @@
   },
   {
     "word": "Estimate",
-    "synonyms": [],
+    "synonyms": [
+      "roughly calculate",
+      "approximate",
+      "make an estimate of",
+      "guess"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Evaluation",
-    "synonyms": [],
+    "synonyms": [
+      "assessment",
+      "appraisal",
+      "judgement",
+      "gauging"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Evident",
@@ -967,9 +1263,14 @@
   },
   {
     "word": "Extinction",
-    "synonyms": [],
+    "synonyms": [
+      "dying out",
+      "disappearance",
+      "vanishing",
+      "death"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Extract",
@@ -991,9 +1292,17 @@
   },
   {
     "word": "Fatal",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "deadly",
+      "lethal",
+      "mortal",
+      "causing death"
+    ],
+    "antonyms": [
+      "harmless",
+      "superficial"
+    ],
+    "checked": true
   },
   {
     "word": "Fatigue",
@@ -1015,15 +1324,30 @@
   },
   {
     "word": "Fertile",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "fecund",
+      "fruitful",
+      "productive",
+      "high-yielding"
+    ],
+    "antonyms": [
+      "infertile"
+    ],
+    "checked": true
   },
   {
     "word": "Flamboyant",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "ostentatious",
+      "exuberant",
+      "confident",
+      "lively"
+    ],
+    "antonyms": [
+      "modest",
+      "restrained"
+    ],
+    "checked": true
   },
   {
     "word": "Flawless",
@@ -1033,9 +1357,14 @@
   },
   {
     "word": "Fleet",
-    "synonyms": [],
+    "synonyms": [
+      "navy",
+      "naval force",
+      "task force",
+      "naval task force"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Flora",
@@ -1069,9 +1398,14 @@
   },
   {
     "word": "Fragment",
-    "synonyms": [],
+    "synonyms": [
+      "piece",
+      "bit",
+      "particle",
+      "speck"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Frequent",
@@ -1117,9 +1451,14 @@
   },
   {
     "word": "Grave",
-    "synonyms": [],
+    "synonyms": [
+      "burying place",
+      "tomb",
+      "sepulchre",
+      "vault"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Gregarious",
@@ -1153,9 +1492,16 @@
   },
   {
     "word": "Habitat",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "natural environment",
+      "natural element",
+      "natural territory",
+      "natural surroundings"
+    ],
+    "antonyms": [
+      "unnatural surroundings"
+    ],
+    "checked": true
   },
   {
     "word": "Halt",
@@ -1195,9 +1541,17 @@
   },
   {
     "word": "Hygienic",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "sanitary",
+      "clean",
+      "germ-free",
+      "dirt-free"
+    ],
+    "antonyms": [
+      "dirty",
+      "insanitary"
+    ],
+    "checked": true
   },
   {
     "word": "Idiosyncrasy",
@@ -1231,9 +1585,14 @@
   },
   {
     "word": "Immerse",
-    "synonyms": [],
+    "synonyms": [
+      "submerge",
+      "plunge",
+      "dip",
+      "dunk"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Impudent",
@@ -1285,15 +1644,23 @@
   },
   {
     "word": "Influence",
-    "synonyms": [],
+    "synonyms": [
+      "effect",
+      "impact"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Inhabitant",
-    "synonyms": [],
+    "synonyms": [
+      "resident",
+      "occupant",
+      "occupier",
+      "dweller"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Innocuous",
@@ -1303,9 +1670,16 @@
   },
   {
     "word": "Insane",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "mentally ill",
+      "severely mentally disordered",
+      "of unsound mind",
+      "certifiable"
+    ],
+    "antonyms": [
+      "sane"
+    ],
+    "checked": true
   },
   {
     "word": "Insert",
@@ -1339,9 +1713,14 @@
   },
   {
     "word": "Intention",
-    "synonyms": [],
+    "synonyms": [
+      "aim",
+      "purpose",
+      "intent",
+      "objective"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Interfere",
@@ -1369,9 +1748,14 @@
   },
   {
     "word": "Interrupt",
-    "synonyms": [],
+    "synonyms": [
+      "cut_in",
+      "cut in on",
+      "break_in",
+      "break in on"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Invalid",
@@ -1387,9 +1771,14 @@
   },
   {
     "word": "Isolation",
-    "synonyms": [],
+    "synonyms": [
+      "separation",
+      "segregation",
+      "setting apart",
+      "keeping apart"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Justice",
@@ -1447,15 +1836,25 @@
   },
   {
     "word": "Liberty",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "freedom",
+      "independence",
+      "free_rein",
+      "freeness"
+    ],
+    "antonyms": [
+      "constraint"
+    ],
+    "checked": true
   },
   {
     "word": "Limb",
-    "synonyms": [],
+    "synonyms": [
+      "arm",
+      "leg"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Linger",
@@ -1483,9 +1882,17 @@
   },
   {
     "word": "Loyal",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "faithful",
+      "true",
+      "true-hearted",
+      "tried and true"
+    ],
+    "antonyms": [
+      "disloyal",
+      "treacherous"
+    ],
+    "checked": true
   },
   {
     "word": "Majestic",
@@ -1495,9 +1902,14 @@
   },
   {
     "word": "Malady",
-    "synonyms": [],
+    "synonyms": [
+      "illness",
+      "sickness",
+      "ailment",
+      "disorder"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Margin",
@@ -1519,9 +1931,16 @@
   },
   {
     "word": "Maximum",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "greatest",
+      "highest",
+      "biggest",
+      "largest"
+    ],
+    "antonyms": [
+      "minimum"
+    ],
+    "checked": true
   },
   {
     "word": "Meagre",
@@ -1537,9 +1956,18 @@
   },
   {
     "word": "Mercy",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "leniency",
+      "lenience",
+      "clemency",
+      "compassion"
+    ],
+    "antonyms": [
+      "ruthlessness",
+      "cruelty",
+      "inhumanity"
+    ],
+    "checked": true
   },
   {
     "word": "Mere",
@@ -1567,9 +1995,17 @@
   },
   {
     "word": "Modest",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "self-effacing",
+      "self-deprecating",
+      "humble",
+      "unpretentious"
+    ],
+    "antonyms": [
+      "boastful",
+      "conceited"
+    ],
+    "checked": true
   },
   {
     "word": "Moral",
@@ -1591,15 +2027,29 @@
   },
   {
     "word": "Nauseous",
-    "synonyms": [],
+    "synonyms": [
+      "sick",
+      "nauseated",
+      "queasy",
+      "bilious"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Nimble",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "agile",
+      "lithe",
+      "sprightly",
+      "acrobatic"
+    ],
+    "antonyms": [
+      "stiff",
+      "clumsy",
+      "lumbering"
+    ],
+    "checked": true
   },
   {
     "word": "Nuisance",
@@ -1615,15 +2065,31 @@
   },
   {
     "word": "Object",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "thing",
+      "article",
+      "item",
+      "piece"
+    ],
+    "antonyms": [
+      "abstract idea",
+      "notion"
+    ],
+    "checked": true
   },
   {
     "word": "Object",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "thing",
+      "article",
+      "item",
+      "piece"
+    ],
+    "antonyms": [
+      "abstract idea",
+      "notion"
+    ],
+    "checked": true
   },
   {
     "word": "Oblige",
@@ -1657,9 +2123,14 @@
   },
   {
     "word": "Occupy",
-    "synonyms": [],
+    "synonyms": [
+      "live in",
+      "inhabit",
+      "be the tenant of",
+      "tenant"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Odour",
@@ -1693,14 +2164,9 @@
   },
   {
     "word": "Oppress",
-    "synonyms": [
-      "persecute",
-      "abuse",
-      "maltreat",
-      "ill-treat"
-    ],
+    "synonyms": [],
     "antonyms": [],
-    "checked": true
+    "checked": false
   },
   {
     "word": "Option",
@@ -1722,9 +2188,19 @@
   },
   {
     "word": "Ostentatious",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "showy",
+      "pretentious",
+      "conspicuous",
+      "obtrusive"
+    ],
+    "antonyms": [
+      "plain",
+      "unobtrusive",
+      "restrained",
+      "modest"
+    ],
+    "checked": true
   },
   {
     "word": "Painstaking",
@@ -1746,27 +2222,50 @@
   },
   {
     "word": "Passive",
-    "synonyms": [],
+    "synonyms": [
+      "inactive",
+      "non-active",
+      "non-participative",
+      "non-participating"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Pasture",
-    "synonyms": [],
+    "synonyms": [
+      "grazing land",
+      "grazing",
+      "grassland",
+      "grass"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Peak",
-    "synonyms": [],
+    "synonyms": [
+      "summit",
+      "top",
+      "crest",
+      "pinnacle"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Peculiar",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "strange",
+      "unusual",
+      "odd",
+      "funny"
+    ],
+    "antonyms": [
+      "normal",
+      "ordinary"
+    ],
+    "checked": true
   },
   {
     "word": "Perceive",
@@ -1788,9 +2287,18 @@
   },
   {
     "word": "Permit",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "allow",
+      "let",
+      "authorize",
+      "give someone authorization"
+    ],
+    "antonyms": [
+      "ban",
+      "forbid",
+      "prohibit"
+    ],
+    "checked": true
   },
   {
     "word": "Perplexed",
@@ -1806,9 +2314,16 @@
   },
   {
     "word": "Physical",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "bodily",
+      "corporeal",
+      "corporal",
+      "fleshly"
+    ],
+    "antonyms": [
+      "mental"
+    ],
+    "checked": true
   },
   {
     "word": "Pigment",
@@ -1818,9 +2333,14 @@
   },
   {
     "word": "Pioneer",
-    "synonyms": [],
+    "synonyms": [
+      "settler",
+      "colonist",
+      "colonizer",
+      "frontiersman"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Placid",
@@ -1842,9 +2362,14 @@
   },
   {
     "word": "Plunder",
-    "synonyms": [],
+    "synonyms": [
+      "pillage",
+      "loot",
+      "rob",
+      "raid"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Plunge",
@@ -1878,9 +2403,13 @@
   },
   {
     "word": "Prejudice",
-    "synonyms": [],
+    "synonyms": [
+      "preconceived idea",
+      "preconception",
+      "preconceived notion"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Privilege",
@@ -1926,15 +2455,29 @@
   },
   {
     "word": "Promote",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "advance",
+      "upgrade",
+      "give promotion to",
+      "give a higher position to"
+    ],
+    "antonyms": [
+      "demote"
+    ],
+    "checked": true
   },
   {
     "word": "Prompt",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "induce",
+      "make",
+      "move",
+      "cause"
+    ],
+    "antonyms": [
+      "discourage"
+    ],
+    "checked": true
   },
   {
     "word": "Pronunciation",
@@ -1950,9 +2493,17 @@
   },
   {
     "word": "Prosperous",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "thriving",
+      "doing well",
+      "prospering",
+      "buoyant"
+    ],
+    "antonyms": [
+      "depressed",
+      "poor"
+    ],
+    "checked": true
   },
   {
     "word": "Provoke",
@@ -1962,21 +2513,41 @@
   },
   {
     "word": "Public",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "state",
+      "national",
+      "federal",
+      "government"
+    ],
+    "antonyms": [
+      "private"
+    ],
+    "checked": true
   },
   {
     "word": "Punctual",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "on_time",
+      "prompt",
+      "on schedule",
+      "to schedule"
+    ],
+    "antonyms": [
+      "late",
+      "early"
+    ],
+    "checked": true
   },
   {
     "word": "Puncture",
-    "synonyms": [],
+    "synonyms": [
+      "hole",
+      "perforation",
+      "prick",
+      "rupture"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Purpose",
@@ -2010,9 +2581,14 @@
   },
   {
     "word": "Quiver",
-    "synonyms": [],
+    "synonyms": [
+      "tremble",
+      "shake",
+      "shiver",
+      "quaver"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Raiment",
@@ -2022,9 +2598,14 @@
   },
   {
     "word": "Ramble",
-    "synonyms": [],
+    "synonyms": [
+      "walk",
+      "take a walk",
+      "go for a walk",
+      "hike"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Ramble",
@@ -2040,9 +2621,15 @@
   },
   {
     "word": "Refuse",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "decline",
+      "turn down",
+      "say no to"
+    ],
+    "antonyms": [
+      "accept"
+    ],
+    "checked": true
   },
   {
     "word": "Release",
@@ -2082,9 +2669,14 @@
   },
   {
     "word": "Resort",
-    "synonyms": [],
+    "synonyms": [
+      "holiday destination",
+      "holiday centre",
+      "tourist centre",
+      "centre"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Restore",
@@ -2094,21 +2686,45 @@
   },
   {
     "word": "Restrain",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "control",
+      "keep under control",
+      "check",
+      "hold in check"
+    ],
+    "antonyms": [
+      "provoke",
+      "encourage"
+    ],
+    "checked": true
   },
   {
     "word": "Retain",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "keep",
+      "keep possession of",
+      "keep hold of",
+      "hold_on_to"
+    ],
+    "antonyms": [
+      "give_up",
+      "lose"
+    ],
+    "checked": true
   },
   {
     "word": "Retreat",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "withdraw",
+      "retire",
+      "draw back",
+      "pull_back"
+    ],
+    "antonyms": [
+      "advance",
+      "dig in"
+    ],
+    "checked": true
   },
   {
     "word": "Reveal",
@@ -2118,15 +2734,25 @@
   },
   {
     "word": "Revive",
-    "synonyms": [],
+    "synonyms": [
+      "resuscitate",
+      "bring round",
+      "bring to life",
+      "bring back"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Rhyme",
-    "synonyms": [],
+    "synonyms": [
+      "poem",
+      "piece of poetry",
+      "verse",
+      "ditty"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Ridiculous",
@@ -2148,9 +2774,17 @@
   },
   {
     "word": "Robust",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "strong",
+      "vigorous",
+      "sturdy",
+      "tough"
+    ],
+    "antonyms": [
+      "weak",
+      "frail"
+    ],
+    "checked": true
   },
   {
     "word": "Rogue",
@@ -2178,9 +2812,14 @@
   },
   {
     "word": "Sacrifice",
-    "synonyms": [],
+    "synonyms": [
+      "ritual slaughter",
+      "hecatomb",
+      "immolation",
+      "offering"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Sanitary",
@@ -2232,15 +2871,25 @@
   },
   {
     "word": "Sermon",
-    "synonyms": [],
+    "synonyms": [
+      "homily",
+      "address",
+      "speech",
+      "talk"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Shoulder",
-    "synonyms": [],
+    "synonyms": [
+      "take_on",
+      "take on oneself",
+      "undertake",
+      "accept"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Shrink",
@@ -2334,9 +2983,17 @@
   },
   {
     "word": "Sturdy",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "strapping",
+      "well_built",
+      "well made",
+      "muscular"
+    ],
+    "antonyms": [
+      "puny",
+      "frail"
+    ],
+    "checked": true
   },
   {
     "word": "Subdued",
@@ -2412,15 +3069,28 @@
   },
   {
     "word": "Suspend",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "adjourn",
+      "interrupt",
+      "break_off",
+      "postpone"
+    ],
+    "antonyms": [
+      "continue",
+      "resume"
+    ],
+    "checked": true
   },
   {
     "word": "Symbol",
-    "synonyms": [],
+    "synonyms": [
+      "emblem",
+      "token",
+      "sign",
+      "representation"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "System",
@@ -2436,15 +3106,28 @@
   },
   {
     "word": "Tempestuous",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "stormy",
+      "blustery",
+      "squally",
+      "wild"
+    ],
+    "antonyms": [
+      "calm",
+      "fine"
+    ],
+    "checked": true
   },
   {
     "word": "Temptation",
-    "synonyms": [],
+    "synonyms": [
+      "desire",
+      "urge",
+      "itch",
+      "impulse"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Thrust",
@@ -2484,23 +3167,20 @@
   },
   {
     "word": "Tyrant",
-    "synonyms": [],
+    "synonyms": [
+      "dictator",
+      "despot",
+      "autocrat",
+      "absolute ruler"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Unfathomable",
-    "synonyms": [
-      "inscrutable",
-      "incomprehensible",
-      "enigmatic",
-      "incalculable"
-    ],
-    "antonyms": [
-      "comprehensible",
-      "penetrable"
-    ],
-    "checked": true
+    "synonyms": [],
+    "antonyms": [],
+    "checked": false
   },
   {
     "word": "Uniform",
@@ -2534,15 +3214,32 @@
   },
   {
     "word": "Vacant",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "empty",
+      "unoccupied",
+      "unfilled",
+      "free"
+    ],
+    "antonyms": [
+      "full",
+      "occupied",
+      "open"
+    ],
+    "checked": true
   },
   {
     "word": "Vanish",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "disappear",
+      "vanish into thin air",
+      "be lost to sight",
+      "be lost to view"
+    ],
+    "antonyms": [
+      "appear",
+      "materialize"
+    ],
+    "checked": true
   },
   {
     "word": "Vapour",
@@ -2570,9 +3267,17 @@
   },
   {
     "word": "Venerable",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "respected",
+      "venerated",
+      "revered",
+      "reverenced"
+    ],
+    "antonyms": [
+      "disreputable",
+      "dishonourable"
+    ],
+    "checked": true
   },
   {
     "word": "Ventilation",
@@ -2588,9 +3293,14 @@
   },
   {
     "word": "Vicarious",
-    "synonyms": [],
+    "synonyms": [
+      "indirect",
+      "second-hand",
+      "secondary",
+      "derivative"
+    ],
     "antonyms": [],
-    "checked": false
+    "checked": true
   },
   {
     "word": "Virtuous",
@@ -2606,9 +3316,17 @@
   },
   {
     "word": "Wasteful",
-    "synonyms": [],
-    "antonyms": [],
-    "checked": false
+    "synonyms": [
+      "prodigal",
+      "profligate",
+      "uneconomical",
+      "extravagant"
+    ],
+    "antonyms": [
+      "thrifty",
+      "frugal"
+    ],
+    "checked": true
   },
   {
     "word": "Weary",

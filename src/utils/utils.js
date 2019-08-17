@@ -2,9 +2,7 @@ const config = require('../config.json')
 const axios = require('axios')
 const fs = require('fs')
 
-const formatWordObject = (dataFromApi) => {
 
-}
 
 
 
@@ -28,7 +26,7 @@ const formatJsonData = (json) => {
         return { word: trimmedWord, synonyms, antonyms, checked: false}
     })
 
-    fs.writeFile("./emptyWordData.json", JSON.stringify(formattedData, null, 2), err => {
+    fs.writeFile("./src/data/word-data.json", JSON.stringify(formattedData, null, 2), err => {
         if (err) {
             console.error(err);
             return;
@@ -40,58 +38,77 @@ const formatJsonData = (json) => {
     // return formattedData
 }
 
+const checkWordObjectIsValid = (wordObject, synOrAnt, randomData) => {
+if(synOrAnt === 'synonyms'){
+            if(wordObject.synonyms.length < 1 || wordObject.antonyms.length < 2 || // make sure that for those pieces of data that 2 or more synonyms or antonyms exist 
+                randomData.some(object => { // and make sure that the same word isnt randomly chosen twice
+                    if(object.word === wordObject){ // removed trim
+                        
+                        return true
+                    } else{
+                        return false
+                    }
+                })
+                ){ 
+                return false
+            }
+            else{
+                return true
+            }
+        } else if(synOrAnt === 'antonyms') {
+            if(wordObject.antonyms.length < 1 || wordObject.synonyms.length < 2 || // make sure that for those pieces of data that 2 or more synonyms or antonyms exist 
+                randomData.some(object => { // and make sure that the same word isnt randomly chosen twice
+                    if(object.word === wordObject.word){
+                        
+                        return true
+                    } else{
+                        return false
+                    }
+                })
+                ){ 
+                return false
+            }
+            else{
+                return true
+            }
+        }    
+}
+
 
 const createQAndAs = async (wordData, synOrAnt) => {
     
     const randomData = []
     const wordDataLength = wordData.length
-    for (let i = 0; i < 1; i++) {  // get 20 random pieces of data
+    for (let i = 0; i < 20; i++) {  // get 20 random pieces of data
+        
         const randomIndex = Math.floor(Math.random() * wordDataLength)
         const rootWord = wordData[randomIndex].word
+        let wordObjectToEvaluate
+        let noEntriesFound = false
 
-        if(wordData[randomIndex].checked === false){
+        if(wordData[randomIndex].checked === true){
+            wordObjectToEvaluate = wordData[randomIndex]    
+        } else {
             const newWordData = await fetchWordInfos(rootWord)
-            formatFetchedDataAndWriteToFile(randomIndex, rootWord, newWordData)
-
+            if(newWordData === 'NoEntriesFound'){
+                i--
+                noEntriesFound = true
+            } else {
+                wordObjectToEvaluate = formatFetchedDataAndWriteToFile(randomIndex, rootWord, newWordData)
+            }
         }
-        // if(synOrAnt === 'synonyms'){
-        //     if(wordData[randomIndex].synonyms.length < 1 || wordData[randomIndex].antonyms.length < 2 || // make sure that for those pieces of data that 2 or more synonyms or antonyms exist 
-        //         randomData.some(wordObject => { // and make sure that the same word isnt randomly chosen twice
-                    
-        //             if(wordObject.word === wordData[randomIndex]){ // removed trim
-                        
-        //                 return true
-        //             } else{
-        //                 return false
-        //             }
-        //         })
-        //         ){ 
-        //         i--
-        //     }
-        //     else{
-        //         randomData.push(wordData[randomIndex])
-        //     }
-        // } else if(synOrAnt === 'antonyms') {
-        //     if(wordData[randomIndex].antonyms.length < 1 || wordData[randomIndex].synonyms.length < 2 || // make sure that for those pieces of data that 2 or more synonyms or antonyms exist 
-        //         randomData.some(wordObject => { // and make sure that the same word isnt randomly chosen twice
-                   
-                    
-        //             if(wordObject.word.trim() === wordData[randomIndex].word.trim()){
-                        
-        //                 return true
-        //             } else{
-        //                 return false
-        //             }
-        //         })
-        //         ){ 
-        //         i--
-        //     }
-        //     else{
-        //         randomData.push(wordData[randomIndex])
-        //     }
-        // }
-            
+
+        if(noEntriesFound === false){
+            if(checkWordObjectIsValid(wordObjectToEvaluate, synOrAnt, randomData)) {
+                randomData.push(wordObjectToEvaluate)
+            } else {
+                i--
+            }
+        } else {
+            noEntriesFound = false
+        }
         
+             
     }
     
 
@@ -203,18 +220,19 @@ const fetchWordInfos = async (rootWord) => {
 
         
 
-        let response
-        const URL = `https://od-api.oxforddictionaries.com/api/v2/thesaurus/en-gb/${rootWord}?strictMatch=false`;
-            try{
-                response = await axios.get(URL, config)
-            
-            }   catch(err) {
-                console.log('error:',err.response.data)
-            }
-            // console.log(response.data.results[0].lexicalEntries[0].entries[0].senses[0].antonyms)
-            return response
+    let response
+    const URL = `https://od-api.oxforddictionaries.com/api/v2/thesaurus/en-gb/${rootWord}?strictMatch=false`;
+        try{
+            response = await axios.get(URL, config)
+        
+        }   catch(err) {
+            console.log('error:',err.response.data)
+            response = 'NoEntriesFound'
+        }
+        // console.log(response.data.results[0].lexicalEntries[0].entries[0].senses[0].antonyms)
+        return response
 
-            // formatFetchedDataAndWriteToFile(rootWord, response)
+        // formatFetchedDataAndWriteToFile(rootWord, response)
         
 }
 
@@ -246,14 +264,27 @@ const writeEmptyWordDataJson = (rootWords) => {
 }
 
 const formatFetchedDataAndWriteToFile = (indexOfWord, rootWord, fetchedData) => {
-    console.log(rootWord)
+    console.log('rootWord:', rootWord)
     const wordDataJson = require('../data/word-data.json')
-    const antonyms = fetchedData.data.results[0].lexicalEntries[0].entries[0].senses[0].antonyms
-    const synonyms = fetchedData.data.results[0].lexicalEntries[0].entries[0].senses[0].synonyms
-    const formattedData = { rootWord, synonyms: [], antonyms: [], checked: true }
+    let antonyms
+    let synonyms
+    if(fetchedData.data.results[0].lexicalEntries[0].entries[0].senses[0].hasOwnProperty('antonyms')){
+        antonyms = fetchedData.data.results[0].lexicalEntries[0].entries[0].senses[0].antonyms
+    } else {
+        antonyms = []
+    }
+
+    if(fetchedData.data.results[0].lexicalEntries[0].entries[0].senses[0].hasOwnProperty('synonyms')){
+        synonyms = fetchedData.data.results[0].lexicalEntries[0].entries[0].senses[0].synonyms
+    } else {
+        synonyms = []
+    }
+     
+    
+    const formattedData = { word: rootWord, synonyms: [], antonyms: [], checked: true }
     
     
-    if(synonyms){
+    if(synonyms.length !== 0){
         for(let i = 1; i <= 4 && i <= synonyms.length; i++){
             if('id' in synonyms[i-1]) formattedData.synonyms.push(synonyms[i-1].id)
             else if('text' in synonyms[i-1]) formattedData.synonyms.push(synonyms[i-1].text)
@@ -261,7 +292,7 @@ const formatFetchedDataAndWriteToFile = (indexOfWord, rootWord, fetchedData) => 
         wordDataJson[indexOfWord].synonyms.push(...formattedData.synonyms)
     }
     
-    if(antonyms){
+    if(antonyms.length !== 0){
         for(let i = 1; i <= 4 && i <= antonyms.length; i++){
             if('id' in antonyms[i-1]) formattedData.antonyms.push(antonyms[i-1].id)
             else if('text' in antonyms[i-1]) formattedData.antonyms.push(antonyms[i-1].text)
@@ -278,6 +309,7 @@ const formatFetchedDataAndWriteToFile = (indexOfWord, rootWord, fetchedData) => 
         }
         console.log('file written successfully')
         });
+    console.log('formattedData: ', formattedData)    
 
     return formattedData
 }
