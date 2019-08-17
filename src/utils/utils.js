@@ -22,8 +22,6 @@ export const formatJsonData = (json) => {
 
 export const createQAndAs = (wordData, synOrAnt) => {
     
-
-    
     const randomData = []
     const wordDataLength = wordData.length
     for (let i = 0; i < 20; i++) {  // get 20 random pieces of data
