@@ -79,7 +79,7 @@ const createQAndAs = async (wordData, synOrAnt) => {
     
     const randomData = []
     const wordDataLength = wordData.length
-    for (let i = 0; i < 20; i++) {  // get 20 random pieces of data
+    for (let i = 0; i < 1; i++) {  // get 20 random pieces of data
         
         const randomIndex = Math.floor(Math.random() * wordDataLength)
         const rootWord = wordData[randomIndex].word
@@ -221,7 +221,7 @@ const fetchWordInfos = async (rootWord) => {
         
 
     let response
-    const URL = `https://od-api.oxforddictionaries.com/api/v2/thesaurus/en-gb/${rootWord}?strictMatch=false`;
+    const URL = `https://cors-anywhere.herokuapp.com/https://od-api.oxforddictionaries.com/api/v2/thesaurus/en-gb/${rootWord}?strictMatch=false`;
         try{
             response = await axios.get(URL, config)
         

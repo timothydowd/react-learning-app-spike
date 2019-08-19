@@ -11,11 +11,12 @@ import AntonymsTest from './components/AntonymsTest'
 import Home from './components/Home'
 
 
+
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      data: formatJsonData(wordData)
+      data: wordData
     }
   }
   render() {
@@ -32,7 +33,7 @@ class App extends Component {
         </Router>
       </div>
         
-     
+
     );
 
   }

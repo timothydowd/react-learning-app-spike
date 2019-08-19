@@ -15,7 +15,7 @@ export default class QuestionMenu extends Component {
             lastWord: '',
             firstQuestion: true,
             toggleAnswerOutcome: false,
-            qAndAs: createQAndAs(this.props.data, this.props.synOrAnt)
+            qAndAs: []
         }
     }
 
@@ -120,8 +120,11 @@ export default class QuestionMenu extends Component {
     }
     
 
-    componentDidUpdate(){
-       
+    componentDidMount(){
+        Promise.resolve(createQAndAs(this.props.data, this.props.synOrAnt)).then(qAndAs => {
+            console.log('in comp mount: ', qAndAs)
+            this.setState({qAndAs})
+        })
         
     }
 
@@ -129,32 +132,38 @@ export default class QuestionMenu extends Component {
     render() {
         // const qandAs = createQAndAs(this.props.data, this.props.synOrAnt)
         const qandAs = this.state.qAndAs
-       
+       console.log('qAndAs: ', qandAs)
         
-        
-        return (
-            <div className='questionStudyContainer' >
-                
-                {!this.state.toggleAnswerOutcome ? 
-                    <div>
-                        {this.state.end ? 
-                            <div>
-                                <p>Session over!</p> <button onClick={() => this.startNewStudySession()}>Study again?</button>
-                            </div>
-                             :  
-                            <div>
-                                What is the {this.props.synOrAnt.slice(0, -1)} of: {qandAs[this.state.questionIndex].word} 
+        if(qandAs.length){
+            return (
+                <div className='questionStudyContainer' >
+                    
+                    {!this.state.toggleAnswerOutcome ? 
+                        <div>
+                            {this.state.end ? 
                                 <div>
-                                    {qandAs[this.state.questionIndex].options.map(option => {
-                                        return <button key={option} onClick={() => this.handleOptionClick(option) }>{option}</button>
-                                    })}
+                                    <p>Session over!</p> <button onClick={() => this.startNewStudySession()}>Study again?</button>
                                 </div>
-                            </div>
-                        }                      
-                    </div> :
-                    <AnswerOutcome synOrAnt={this.props.synOrAnt} handleIncorrectAnswer={this.handleIncorrectAnswer} firstQuestion={this.state.firstQuestion} nextQuestion={this.nextQuestion} lastWord={this.state.lastWord} lastOptionChosen={this.state.lastOptionChosen} lastCorrectAnswer={this.state.lastCorrectAnswer} questionIndex={this.state.questionIndex}/>
-                }
-            </div>
-        )
+                                 :  
+                                <div>
+                                    What is the {this.props.synOrAnt.slice(0, -1)} of: {qandAs[this.state.questionIndex].word} 
+                                    <div>
+                                        {qandAs[this.state.questionIndex].options.map(option => {
+                                            return <button key={option} onClick={() => this.handleOptionClick(option) }>{option}</button>
+                                        })}
+                                    </div>
+                                </div>
+                            }                      
+                        </div> :
+                        <AnswerOutcome synOrAnt={this.props.synOrAnt} handleIncorrectAnswer={this.handleIncorrectAnswer} firstQuestion={this.state.firstQuestion} nextQuestion={this.nextQuestion} lastWord={this.state.lastWord} lastOptionChosen={this.state.lastOptionChosen} lastCorrectAnswer={this.state.lastCorrectAnswer} questionIndex={this.state.questionIndex}/>
+                    }
+                </div>
+            )
+        } else {
+            return (
+                <div> LOADING </div>
+            )
+        }
+        
     }
 }
