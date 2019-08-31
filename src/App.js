@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import wordData from '../src/data/word-data.json'
 import './App.css';
-import { formatJsonData } from '../src/utils/utils'
 import Nav from './components/Nav'
 import { Router } from '@reach/router'
 import SynonymsStudy from './components/SynonymsStudy'
@@ -9,13 +7,15 @@ import SynonymsTest from './components/SynonymsTest'
 import AntonymsStudy from './components/AntonymsStudy'
 import AntonymsTest from './components/AntonymsTest'
 import Home from './components/Home'
+import { connect } from 'react-redux'
+
 
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      data: formatJsonData(wordData)
+      
     }
   }
   render() {
@@ -24,11 +24,11 @@ class App extends Component {
         <Nav/>
         
         <Router>
-          <Home path="/" data={this.state.data} />
-          <SynonymsStudy path="synonyms_study" data={this.state.data} />
-          <AntonymsStudy path="antonyms_study" data={this.state.data} />
-          <SynonymsTest path="synonyms_test" data={this.state.data} />
-          <AntonymsTest path="antonyms_test" data={this.state.data} />         
+          <Home path="/"  />
+          <SynonymsStudy path="synonyms_study"  />
+          <AntonymsStudy path="antonyms_study"  />
+          <SynonymsTest path="synonyms_test"  />
+          <AntonymsTest path="antonyms_test"  />         
         </Router>
       </div>
         
@@ -39,4 +39,11 @@ class App extends Component {
   
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    data: state.data
+  }
+  
+}
+
+export default connect(mapStateToProps)(App);

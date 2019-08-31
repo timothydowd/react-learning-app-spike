@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { getTotalValidSynsAndAnts } from '../utils/utils' 
+import {connect} from 'react-redux'
 
-export default class Home extends Component {
+class Home extends Component {
     render() {
         const totalValidAntsAndSyns = getTotalValidSynsAndAnts(this.props.data)
         return (
@@ -22,3 +23,13 @@ export default class Home extends Component {
         )
     }
 }
+
+const mapStateToProps = state => {
+    return {
+      data: state.data
+    }
+    
+  }
+
+  export default connect(mapStateToProps)(Home)
+

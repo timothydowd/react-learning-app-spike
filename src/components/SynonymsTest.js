@@ -1,13 +1,18 @@
 import React, { Component } from 'react'
 import QuestionSheetTest from './QuestionsSheetTest'
+import {connect} from 'react-redux'
 
-export default class SynonymsTest extends Component {
+ class SynonymsTest extends Component {
     render() {
         return (
             <div>
                 <h2>Synonyms Test</h2>
-                <QuestionSheetTest data={this.props.data} synOrAnt={'synonyms'} />
+                <QuestionSheetTest  synOrAnt={'synonyms'} />
             </div>
         )
     }
 }
+
+
+
+  export default SynonymsTest

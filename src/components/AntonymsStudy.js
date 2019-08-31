@@ -1,16 +1,22 @@
 import React, { Component } from 'react'
 import QuestionMenu from './QuestionMenu'
+import { connect } from 'react-redux';
 
 
-export default class AntonymsStudy extends Component {
+ class AntonymsStudy extends Component {
     render() {
         return (
             <div>
                 <h2>Antonyms Study</h2>
-                <QuestionMenu data={this.props.data} synOrAnt={'antonyms'} />
+                <QuestionMenu synOrAnt={'antonyms'} />
             </div>
                 
             
         )
     }
 }
+
+
+
+
+  export default AntonymsStudy

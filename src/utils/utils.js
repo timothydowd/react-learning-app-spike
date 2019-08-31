@@ -93,7 +93,7 @@ export const createQAndAs = (wordData, synOrAnt) => {
         }
         
     })
-    console.log('questions: ', formattedQandAs)
+    
     return formattedQandAs
     
     

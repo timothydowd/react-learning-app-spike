@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { createQAndAs } from '../utils/utils'
+import {connect} from 'react-redux'
 
-export default class QuestionsSheetTest extends Component {
+class QuestionsSheetTest extends Component {
     constructor (props) {
         super(props)
         this.state = {
@@ -120,3 +121,12 @@ export default class QuestionsSheetTest extends Component {
         
     }
 }
+
+const mapStateToProps = state => {
+    return {
+      data: state.data
+    }
+    
+  }
+
+export default connect(mapStateToProps)(QuestionsSheetTest)

@@ -17,7 +17,7 @@ class QuestionMenu extends Component {
             lastWord: '',
             firstQuestion: true,
             toggleAnswerOutcome: false,
-            qAndAs: createQAndAs(this.props.data, this.props.synOrAnt)
+            // qAndAs: createQAndAs(this.props.data, this.props.synOrAnt)
         }
     }
 
@@ -27,26 +27,15 @@ class QuestionMenu extends Component {
         const word = this.qAndAs[this.state.questionIndex].word
         const currentScore = this.state.score
         
-
-        // if(this.state.questionIndex === this.state.qAndAs.length - 1){
-        //     this.setState({
-        //         end: true,
-        //         lastCorrectAnswer: correctAnswer,
-        //         lastOptionChosen: option,
-        //         lastWord: word,
-        //         score: this.handleScore(option, correctAnswer, currentScore)
-        //     })
-        // } else {
-            this.setState({
-                
+            this.setState({  
                 lastCorrectAnswer: correctAnswer,
                 lastOptionChosen: option,
                 lastWord: word,
                 firstQuestion: false,
                 toggleAnswerOutcome: this.toggleAnswerOutcome(),
-                score: this.handleScore(option, correctAnswer, currentScore)
+                score: this.handleScore(option, correctAnswer, currentScore),
+                qAndAs:[]
             })
-        // }
         
     }
 
@@ -98,14 +87,6 @@ class QuestionMenu extends Component {
         return toggledAnswerOutcome
     }
 
-    // nextQuestionOnIncorrectAnswer = (incorrectAnswer) => {
-    //     const newQandAs = insertQuestionBackIntoStack(this.state.qAndAs, incorrectAnswer, this.state.questionIndex)
-        
-    //     console.log('handleIncorrectAnswer')
-
-        
-    // }
-
     startNewStudySession(){
         this.setState({
             questionIndex: 0,
@@ -122,16 +103,20 @@ class QuestionMenu extends Component {
     }
     
 
-    componentDidUpdate(){
+    componentDidMount(prevProps, prevState){
+        if(prevState !== this.state){
+            this.setState({
+                qAndAs: createQAndAs(this.props.data, this.props.synOrAnt)
+               })
+        }
        
         
     }
 
 
     render() {
-        // const qandAs = createQAndAs(this.props.data, this.props.synOrAnt)
         const qandAs = this.qAndAs
-       
+        console.log('questions: ', qandAs)
         
         
         return (
@@ -163,7 +148,18 @@ class QuestionMenu extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        data: state.data
+        data: state.data,
+
+        questionIndex: state.questionIndex,
+    answerOutcome: state.answerOutcome,
+    end: state.end,
+    score: state.score,
+    lastOptionChosen: state.lastOptionChosen,
+    lastCorrectAnswer: state.lastCorrectAnswer,
+    lastWord: state.lastWord,
+    firstQuestion: state.firstQuestion,
+    toggleAnswerOutcome: state.toggleAnswerOutcome,
+    qAndAs: state.qAndAs
     }
 }
 
