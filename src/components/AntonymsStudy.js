@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
         return (
             <div>
                 <h2>Antonyms Study</h2>
-                <QuestionMenu synOrAnt={'antonyms'} />
+                <QuestionMenu  synOrAnt={'antonyms'} />
             </div>
                 
             

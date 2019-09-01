@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Router, Link, navigate } from '@reach/router'
+import { Link } from '@reach/router'
+import { connect } from  'react-redux'
+import * as actionTypes from '../store/actions'
 
-
-export default class Nav extends Component {
+ class Nav extends Component {
     render() {
         
         return (
@@ -11,10 +12,10 @@ export default class Nav extends Component {
                 <nav>
                     <ul className='navLinks'>
                         <li><Link to ='/'>Home</Link></li>
-                        <li> <Link to ='antonyms_study'>Antonyms Study</Link></li>
-                        <li><Link to ='synonyms_study'>Synonyms Study</Link></li>
-                        <li><Link to ='antonyms_test'>Antonyms Test</Link></li>
-                        <li><Link to ='synonyms_test'>Synonyms Test</Link></li>
+                        <li> <Link to ='antonyms_study' onClick={this.props.onClickSynOrAnt('antonyms')} >Antonyms Study</Link></li>
+                        <li><Link to ='synonyms_study' onClick={this.props.onClickSynOrAnt('synonyms')} >Synonyms Study</Link></li>
+                        <li><Link to ='antonyms_test'onClick={this.props.onClickSynOrAnt('antonyms')} >Antonyms Test</Link></li>
+                        <li><Link to ='synonyms_test'onClick={this.props.onClickSynOrAnt('synonyms')} >Synonyms Test</Link></li>
                     </ul>
                 </nav>
                 
@@ -22,3 +23,24 @@ export default class Nav extends Component {
         )
     }
 }
+
+// const mapDispatchToProps = dispatch => {
+//     return{
+//         onClickSynOrAnt: (synOrAnt) => dispatch(
+//             {type: actionTypes.SYN_OR_ANT_MODE, synOrAnt: synOrAnt}
+//         )
+
+//     }
+// }
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onClickSynOrAnt: (synOrAnt ) => dispatch(
+            {type: actionTypes.SYN_OR_ANT_MODE, synOrAnt: synOrAnt}
+        )
+
+    }
+}
+
+
+export default connect(null, mapDispatchToProps)(Nav)
